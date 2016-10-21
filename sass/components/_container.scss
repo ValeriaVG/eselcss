@@ -1,0 +1,131 @@
+.container{
+  box-sizing: border-box;
+  padding-left:$base-line-height;
+  padding-right:$base-line-height;
+  @include clearfix();
+  margin: 0 auto;
+  @include media-more-than($phone){
+    width:$phone;
+  }
+  @include media-more-than($tablet){
+    width:$tablet;
+  }
+  @include media-more-than($desktop){
+    width:$desktop;
+  }
+  &.fluid{
+    width:auto;
+  }
+}
+
+
+@for $i from 1px through $base-font-size/4{
+  .border-#{$i}{
+    border-width:$i;
+  }
+  .border-top-#{$i}{
+    border-top-width:$i;
+  }
+  .border-left-#{$i}{
+    border-left-width:$i;
+  }
+  .border-right-#{$i}{
+    border-right-width:$i;
+  }
+  .border-bottom-#{$i}{
+    border-right-width:$i;
+  }
+
+
+
+
+}
+.border-radius-small{
+  border-radius:$base-font-size/4;
+}
+.border-radius{
+  border-radius:$base-font-size/2;
+}
+.border-radius-big{
+  border-radius:$base-font-size;
+}
+.border-radius-huge{
+  border-radius:$base-font-size*2;
+}
+.solid{
+  border-style: solid;
+  box-sizing:border-box;
+}
+.dashed{
+  border-style: dashed;
+  box-sizing:border-box;
+}
+.dotted{
+  border-style: dotted;
+  box-sizing:border-box;
+}
+
+.float-left{
+  float:left;
+}
+.float-right{
+  float:right;
+}
+.clearfix{
+  @include clearfix();
+}
+.padded{
+  @include rhythm-padding();
+}
+.padded-half{
+  @include rhythm-padding(0.5);
+}
+.rhythm{
+  @include rhythm();
+}
+.rhythm-half{
+  @include rhythm(0.5);
+}
+.leader{
+  @include leader();
+}
+.leader-half{
+  @include leader(0.5);
+}
+.padding-leader{
+  @include padding-leader();
+}
+.padding-leader-half{
+  @include padding-leader(0.5);
+}
+.trailer{
+  @include trailer();
+}
+.trailer-half{
+  @include trailer(0.5);
+}
+.trailer-double{
+  @include trailer(2);
+}
+.padding-trailer{
+  @include  padding-trailer();
+}
+.padding-trailer-half{
+  @include  padding-trailer(0.5);
+}
+.padding-trailer-double{
+  @include  padding-trailer(2);
+}
+img{
+  max-width:100%;
+  height:auto!important;
+}
+.shadowed{
+      box-shadow: 0px 0px 10px 5px text("dark-divider");
+}
+.segment{
+  padding:$base-line-height;
+}
+.no-trailer{
+  margin-bottom:0!important;
+}

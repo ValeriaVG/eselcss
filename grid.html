@@ -1,0 +1,224 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+    <meta charset="utf-8">
+    <link href="css/esel.css" rel="stylesheet">
+    <link href="favicon.ico" rel="shortcut icon">
+    <meta name="viewport" content="initial-scale=1, width=device-width">
+    <title>EselCSS Grid</title>
+</head>
+
+<body class="lined">
+    <div class="container">
+      <div class="row">
+        <div class="col desktop-9">
+        <h1>Twelve columns layout</h1>
+        <h2>Normal columns</h2>
+        <div class="row">
+            <div class="col desktop-3 tablet-6 phone-12">
+                <div class="bg-red">.col.desktop-3.tablet-6.phone-12</div>
+            </div>
+            <div class="col phone-6">
+                <div class="bg-orange">.col.phone-6</div>
+            </div>
+            <div class="col phone-6">
+                <div class="bg-yellow">.col.phone-6</div>
+            </div>
+            <div class="col desktop-3 tablet-6 phone-12">
+                <div class="bg-green">.col.desktop-6.tablet-6.phone-12</div>
+            </div>
+
+            <div class="col desktop-4">
+                <div class="bg-light-blue">.col.desktop-4</div>
+            </div>
+            <div class="col desktop-4">
+                <div class="bg-blue">.col.desktop-4</div>
+            </div>
+            <div class="col desktop-4">
+                <div class="bg-purple">.col.desktop-4</div>
+            </div>
+        </div>
+        <h2>Columns widthout padding & margin</h2>
+        <div class="row nopadding nomargin">
+            <div class="col desktop-3 col tablet-6 col phone-12">
+                <div class="red border-red border-2px solid">.col.desktop-3.tablet-6.phone-12</div>
+            </div>
+            <div class="col phone-6">
+                <div class="orange border-orange border-2px solid">.col.phone-6</div>
+            </div>
+            <div class="col phone-6">
+                <div class="yellow border-yellow border-2px solid">.col.phone-6</div>
+            </div>
+            <div class="col desktop-3 col tablet-6 col phone-12">
+                <div class="green border-green border-2px solid">.col.desktop-6.tablet-6.phone-12</div>
+            </div>
+
+            <div class="col desktop-4">
+                <div class="border-light-blue light-blue border-2px solid">.col.desktop-4</div>
+            </div>
+            <div class="col desktop-4">
+                <div class="border-blue blue border-2px solid">.col.desktop-4</div>
+            </div>
+            <div class="col desktop-4">
+                <div class="border-purple purple border-2px solid">.col.desktop-4</div>
+            </div>
+            <div class="col desktop-3 col tablet-6 col phone-12">
+                <div class="red border-red border-2px solid">.col.desktop-3.tablet-6.col.phone-12</div>
+            </div>
+            <div class="col phone-6">
+                <div class="orange border-orange border-2px solid">.col.phone-6</div>
+            </div>
+            <div class="col phone-6">
+                <div class="yellow border-yellow border-2px solid">.col.phone-6</div>
+            </div>
+            <div class="col desktop-3 col tablet-6 col phone-12">
+                <div class="green border-green border-2px solid">.col.desktop-6.tablet-6.phone-12</div>
+            </div>
+
+            <div class="col desktop-4">
+                <div class="border-light-blue light-blue border-2px solid">.col.desktop-4</div>
+            </div>
+            <div class="col desktop-4">
+                <div class="border-blue blue border-2px solid">.col.desktop-4</div>
+            </div>
+            <div class="col desktop-4">
+                <div class="border-purple purple border-2px solid">.col.desktop-4</div>
+            </div>
+        </div>
+        <h2>Nested columns</h2>
+        <div class="row">
+            <div class="col desktop-6 col phone-12">
+                <div class="row">
+                    <div class="col phone-2">
+                        <div class="bg-amber-700 light-primary">.col.phone-2</div>
+                    </div>
+                    <div class="col phone-2">
+                        <div class="bg-cyan-700 light-primary">.col.phone-2</div>
+                    </div>
+                    <div class="col phone-2">
+                        <div class="bg-teal-700 light-primary">.col.phone-2</div>
+                    </div>
+                    <div class="col phone-2">
+                        <div class="bg-green-700 light-primary">.col.phone-2</div>
+                    </div>
+                    <div class="col phone-2">
+                        <div class="bg-lime-700 light-primary">.col.phone-2</div>
+                    </div>
+                    <div class="col phone-2">
+                        <div class="bg-pink-700 light-primary">.col.phone-2</div>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <h2>Columns offset</h2>
+
+        <div class="row equal-height">
+            <div class="col phone-2">
+                <div class="bg-lime-700 light-primary">.col.phone-2 on the left</div>
+            </div>
+            <div class="col offset-phone-8 col phone-2">
+                <div class="bg-blue-gray-700 light-primary">.col.phone-2.offset-8</div>
+            </div>
+        </div>
+        <div class="row">
+            <div class="col tablet-2">
+                <div class="bg-lime-700 light-primary">.col.tablet-2 on the left</div>
+            </div>
+            <div class="col offset-tablet-8 col tablet-2">
+                <div class="bg-blue-gray-700 light-primary">.col.tablet-2.offset-8</div>
+            </div>
+        </div>
+        <h2>Reordering columns</h2>
+
+        <div class="row">
+            <div class="col phone-3 push-desktop-2">
+                <div class="bg-lime-700 light-primary">.col.phone-3 on the right on desktop</div>
+            </div>
+
+            <div class="col phone-2 pull-desktop-3">
+                <div class="bg-blue-gray-700 light-primary">.col.phone-2 on the left on desktop</div>
+            </div>
+
+            <div class="col phone-2">
+                <div class="bg-black light-primary">.col.phone-2 on it's normal place</div>
+            </div>
+        </div>
+
+
+
+
+
+        <p class="rhythm-half">Quam ob rem tandem, inquit, non satisfacit? Sed haec ab Antiocho, familiari nostro, dicuntur multo melius et fortius, quam a Stasea dicebantur. Quo studio Aristophanem putamus aetatem in litteris duxisse? Sit, inquam, tam facilis, quam vultis,
+            comparatio voluptatis, quid de dolore dicemus? Duo enim genera quae erant, fecit tria. <code>Quid, quod res alia tota est?</code> Ut optime, secundum naturam affectum esse possit. </p>
+
+        <h2>Cum ageremus, inquit, vitae beatum et eundem supremum diem, scribebamus haec.</h2>
+
+        <p><i>Ea possunt paria non esse.</i> <mark>Qui est in parvis malis.</mark> Earum etiam rerum, quas terra gignit, educatio quaedam et perfectio est non dissimilis animantium. Quid turpius quam sapientis vitam ex insipientium sermone pendere? Prioris
+            generis est docilitas, memoria; <code>Venit ad extremum;</code> An est aliquid per se ipsum flagitiosum, etiamsi nulla comitetur infamia? Hi curatione adhibita levantur in dies, valet alter plus cotidie, alter videt. Qua tu etiam inprudens
+            utebare non numquam. <mark>Quis est, qui non oderit libidinosam, protervam adolescentiam?</mark> Qua igitur re ab deo vincitur, si aeternitate non vincitur? </p>
+
+        <blockquote cite='http://loripsum.net'>
+            Nam quod ita positum est, quod dissolutum sit, id esse sine sensu, id eius modi est, ut non satis plane dicat quid sit dissolutum.
+        </blockquote>
+
+
+        <p>Expressa vero in iis aetatibus, quae iam confirmatae sunt. <code>Eam stabilem appellas.</code> </p>
+
+        <ul>
+            <li>Huius, Lyco, oratione locuples, rebus ipsis ielunior.</li>
+            <li>An potest, inquit ille, quicquam esse suavius quam nihil dolere?</li>
+        </ul>
+
+
+        <p>Unum nescio, quo modo possit, si luxuriosus sit, finitas cupiditates habere. Omnia peccata paria dicitis. </p>
+
+        <ol>
+            <li>Quae sequuntur igitur?</li>
+            <li>Se dicere inter honestum et turpe nimium quantum, nescio quid inmensum, inter ceteras res nihil omnino interesse.</li>
+            <li>Eorum enim est haec querela, qui sibi cari sunt seseque diligunt.</li>
+            <li>Conferam tecum, quam cuique verso rem subicias;</li>
+        </ol>
+
+
+        <dl>
+            <dt><dfn>Eam stabilem appellas.</dfn></dt>
+            <dd>Estne, quaeso, inquam, sitienti in bibendo voluptas?</dd>
+            <dt><dfn>Quis enim redargueret?</dfn></dt>
+            <dd>Universa enim illorum ratione cum tota vestra confligendum puto.</dd>
+            <dt><dfn>Respondeat totidem verbis.</dfn></dt>
+            <dd>Ut placet, inquit, etsi enim illud erat aptius, aequum cuique concedere.</dd>
+            <dt><dfn>Quibusnam praeteritis?</dfn></dt>
+            <dd>Curium putes loqui, interdum ita laudat, ut quid praeterea sit bonum neget se posse ne suspicari quidem.</dd>
+            <dt><dfn>Si quae forte-possumus.</dfn></dt>
+            <dd>Unum est sine dolore esse, alterum cum voluptate.</dd>
+            <dt><dfn>Tria genera bonorum;</dfn></dt>
+            <dd>Primum cur ista res digna odio est, nisi quod est turpis?</dd>
+        </dl>
+
+
+        <pre class="block">
+  Ut bacillum aliud est inflexum et incurvatum de industria,
+  aliud ita natum, sic ferarum natura non est illa quidem
+  depravata mala disciplina, sed natura sua.
+
+  Quis est enim, qui hoc cadere in sapientem dicere audeat,
+  ut, si fieri possit, virtutem in perpetuum abiciat, ut
+  dolore omni liberetur?
+  </pre>
+
+    </div>
+    <div class="col desktop-3">
+      <ul class="nav bordered left-red-border-menu">
+        <li><a href="#">Text</a></li>
+        <li class="active"><a href="#">Quis est enim, qui hoc cadere in sapientem dicere audeat</a></li>
+        <li><a href="#">Ut bacillum</a></li>
+        <li><a href="#">Text</a></li>
+      </ul>
+    </div>
+</div>
+
+
+</body>
+
+</html>

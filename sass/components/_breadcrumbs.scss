@@ -1,0 +1,31 @@
+ul.breadcrumbs {
+    @include clearfix();
+    list-style-type: none;
+    padding: 0;
+    margin: 0;
+    @include trailer();
+
+    li {
+        float: left;
+        padding: 0;
+        margin: 0;
+
+        &:before {
+            display: none;
+            content: "";
+        }
+    }
+
+    li+li {
+        padding-left: $base-line-height*1.5;
+        position: relative;
+
+        &:before {
+            content: $fa-var-angle-right;
+            font-family: "FontAwesome";
+            position: absolute;
+            left: $base-line-height/2;
+            display:inline;
+        }
+    }
+}

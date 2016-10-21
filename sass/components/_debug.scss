@@ -1,0 +1,30 @@
+@import "compass/layout/grid-background";
+$grid-background-baseline-height:$base-line-height;
+$grid-background-column-width:$base-line-height;
+$grid-background-gutter-width:$base-line-height;
+$grid-background-total-columns:48;
+body.lined {
+    @include baseline-grid-background();
+}
+
+.show-grids {
+    @include column-grid-background();
+}
+$grid-background-column-width:$base-line-height;
+$grid-background-gutter-width:$base-line-height;
+$grid-background-total-columns:$columns;
+$grid-background-force-fluid:true;
+$grid-background-column-width: $desktop/$columns;
+$grid-background-offset: $base-line-height;
+$grid-background-column-color: rgba(255, 0, 0, 0.25);
+.show-columns {
+    @include column-grid-background();
+    @include media-less-than($desktop){
+      $grid-background-column-width: $tablet/$columns;
+        @include column-grid-background();
+    }
+    @include media-less-than($tablet){
+      $grid-background-column-width: $phone/$columns;
+        @include column-grid-background();
+    }
+}

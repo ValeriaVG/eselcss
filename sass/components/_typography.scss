@@ -1,0 +1,255 @@
+@include establish-baseline();
+a{
+  color:$link-color;
+  &:hover{
+   color:  $link-hover-color;
+  }
+}
+body {
+    @include adjust-font-size-to($base-font-size);
+    font-family: $text-font;
+    color: $base-text;
+}
+
+.h1,
+.h2,
+.h3,
+.h4,
+.h5,
+.h6,
+h1,
+h2,
+h3,
+h4,
+h5,
+h6 {
+    color: $headings-text;
+    display: block;
+}
+
+.h1,
+h1 {
+    @include adjust-font-size-to($base-font-size*2*$ratio);
+    font-weight: bold;
+    @include rhythm-padding(0.5);
+    font-family: $main-header-font;
+    font-weight: $main-header-weight;
+    text-transform: $main-header-transform;
+}
+
+.h2,
+h2 {
+    @include adjust-font-size-to($base-font-size*$ratio);
+    font-weight: bold;
+    @include trailer(0.5);
+    font-family: $header-font;
+    font-weight: $header-weight;
+    text-transform: $header-transform;
+}
+
+.h3,
+h3 {
+    @include adjust-font-size-to($base-font-size*0.75*$ratio);
+    font-weight: bold;
+    @include trailer(.5);
+}
+
+.h4,
+h4 {
+    @include adjust-font-size-to($base-font-size*0.5*$ratio);
+    font-weight: bold;
+    @include trailer(.5);
+}
+
+.h5,
+h5 {
+    @include adjust-font-size-to($base-font-size);
+    font-weight: bold;
+    @include trailer(.5);
+}
+
+.h6,
+h6 {
+    @include adjust-font-size-to($base-font-size);
+    font-weight: bold;
+    @include trailer(.5);
+}
+
+blockquote,
+dl,
+ol,
+p,
+pre,
+ul {
+    @include trailer();
+}
+
+code,
+pre {
+    background: $highlight-color;
+    white-space: pre-line;
+    color: $text-on-highlight;
+
+    &.block {
+        @include rhythm-padding();
+        @include leader();
+        display: block;
+        padding-left: $base-line-height/2 + $base-font-size/4;
+        padding-right: $base-line-height/2 + $base-font-size/4;
+    }
+}
+
+blockquote {
+    margin-left: $base-line-height - $base-font-size/4;
+    padding-left: $base-line-height;
+    border-left: $base-font-size/4 solid $border-color;
+}
+
+.bold,
+b,
+strong {
+    font-weight: bold;
+}
+
+.bolder {
+    font-weight: bolder;
+}
+
+em {
+    font-style: italic;
+}
+
+ol,
+ul {
+    li {
+        margin-left: $base-line-height;
+        display: block;
+
+        &:before {
+            color: $li-char-color;
+        }
+    }
+}
+
+ul li {
+    padding-left: $base-line-height;
+    position: relative;
+
+    &:before {
+        left: $base-line-height/4;
+        content: $li-char;
+        position: absolute;
+    }
+}
+
+ol {
+    counter-reset: list 0;
+
+    li {
+        padding-left: $base-line-height/2+$base-font-size;
+        position: relative;
+
+        &:before {
+            left: 0;
+            counter-increment: list;
+            content: counter(list) ".";
+            position: absolute;
+        }
+    }
+}
+
+dl {
+    dt {
+        margin-left: $base-line-height+2px;
+
+        dfn {
+            font-style: italic;
+        }
+    }
+
+    dd {
+        margin-left: $base-line-height;
+        padding-left: $base-line-height - $base-font-size/4;
+        border-left: 2px solid $border-color;
+        @include trailer();
+    }
+}
+
+mark {
+    color: $text-on-highlight;
+    background: $highlight-bg;
+}
+
+.text-left {
+    text-align: left;
+}
+
+.text-right {
+    text-align: right;
+}
+
+.text-center {
+    text-align: center;
+}
+
+.text-justify {
+    text-align: justify;
+}
+.uppercase{
+  text-transform: uppercase;
+}
+.divider,
+hr {
+    height: 1px;
+    overflow: hidden;
+    background-color: text("dark-divider");
+    margin-top: -1px;
+    display: block;
+    clear:both;
+border: none;
+
+    &.light {
+        background-color: text("light-divider");
+    }
+  }
+.smaller,small{
+  @include adjust-font-size-to($base-font-size/$ratio);
+}
+.img.float-left{
+  padding-right:$base-line-height;
+  padding-bottom:$base-line-height;
+}
+.img.float-right{
+  padding-left:$base-line-height;
+  padding-bottom:$base-line-height;
+}
+.one-line{
+  line-height: $base-line-height;
+}
+textarea{
+  font-family: $text-font;
+}
+
+table{
+  border-collapse: collapse;
+  box-sizing: border-box;
+  tr{
+    td,th{
+      border:1px solid $border-color;
+      word-wrap: break-word;
+      padding:$base-line-height/2;
+      box-sizing: border-box;
+    }
+    th{
+      font-weight:bold;
+    }
+  }
+}
+sub{
+  font-size: smaller;
+  vertical-align: sub;
+}
+sup{
+  font-size: smaller;
+  vertical-align: super;
+}

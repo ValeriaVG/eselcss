@@ -1,0 +1,45 @@
+.btn{
+  cursor:pointer;
+  outline:none!important;
+  border:1px solid $border-color;
+  color:text("dark-primary");
+  background:white;
+  @include rhythm-padding(0.5);
+  display:inline-block;
+  height:$base-line-height;
+  line-height: $base-line-height;
+  padding: 0;
+  box-sizing: content-box;
+  &[disabled]{
+    opacity:0.5;
+  }
+  &.big{
+  padding-left: $base-line-height/2;
+  padding-right: $base-line-height/2;
+  height:$base-line-height*2;
+  line-height: $base-line-height*2;
+  }
+  &.transparent{
+    background:transparent;
+    border:none;
+    padding:0;
+
+  }
+  &>.fa{
+    padding-left: $base-line-height/4;
+    padding-right: $base-line-height/4;
+  }
+}
+
+@each $name,$color in $palette{
+  .btn.btn-#{$name}{
+    background:map-get($color,"500");
+    color:white;
+    border:1px solid map-get($color,"400");
+    transition: 300ms;
+    &:hover{
+      background:map-get($color,"A700");
+      transition: 500ms;
+    }
+  }
+}

@@ -1,0 +1,41 @@
+$base-line-height:25px;
+$ratio:1.61803398875;
+$rhythm-unit: "rem";
+$base-font-size:16px;
+
+$border-color: text("dark-divider");
+$highlight-color: palette("blue-gray","100");
+
+$highlight-bg: palette("yellow","A200");
+$text-on-highlight:text("dark-secondary");
+
+$base-text:text("dark-primary");
+$headings-text:text("dark-primary");
+
+$li-char:"\2022 ";
+$li-char-color:text("dark-hint");
+
+$columns:12;
+
+
+$desktop:1140px;
+$tablet:960px;
+$phone:480px;
+
+
+$main-header-font:sans-serif!default;
+$main-header-weight:bold!default;
+$main-header-transform:none!default;
+
+$header-font:sans-serif!default;
+$header-weight:bold!default;
+$header-transform:none!default;
+
+$text-font:sans-serif!default;
+
+$link-color:palette("purple","500");
+$link-hover-color:palette("purple","700");
+
+$primary-color:palette("purple","500");
+
+$overlay-bg:rgba(0,0,0,0.87);

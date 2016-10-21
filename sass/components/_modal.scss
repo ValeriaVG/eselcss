@@ -1,0 +1,32 @@
+.overlay {
+    background: $overlay-bg;
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    display: none;
+    z-index: 98;
+}
+
+.modal {
+  &>.close-modal{
+    position: absolute;
+    top:0;
+    right:0;
+  }
+    position: fixed;
+    overflow: auto;
+    background: white;
+    display: none;
+    padding: $base-line-height;
+    width: 100%;
+    z-index: 99;
+    box-sizing: border-box;
+    @include media-more-than($phone) {
+        width: $phone - $base-line-height*2;
+    }
+    @include media-more-than($tablet) {
+        width: $tablet - $base-line-height*2;
+    }
+}

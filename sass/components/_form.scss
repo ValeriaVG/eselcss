@@ -1,0 +1,25 @@
+.form{
+  label{
+    display:block;
+  }
+  input,select{
+    &[type=text],&[type=tel],&[type=email],&{
+      border:1px solid $border-color;
+      padding-left: $base-line-height/2;
+      padding-right: $base-line-height/2;
+      line-height: $base-line-height*1.5;
+      width:100%;
+      box-sizing: border-box;
+      height:$base-line-height*1.5;
+    }
+  }
+  textarea{
+    border:1px solid $border-color;
+    width:100%;
+    box-sizing: border-box;
+    @include rhythm-padding(0.5);
+    padding-left: $base-line-height/2;
+    padding-right: $base-line-height/2;
+    min-height:$base-line-height*5;
+  }
+}
