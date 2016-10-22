@@ -57,7 +57,9 @@ flex-wrap: wrap;
   &.push-phone-#{$i}{
     left:(100% / $columns)*$i;
   }
-
+}
+@for $i from 1 through $columns
+{
   @include media-more-than($phone){
     &.tablet-#{$i}{
       width:(100% / $columns)*$i;
