@@ -22,11 +22,11 @@ module.exports = function(config) {
 
     // optionally, configure the reporter
     coverageReporter: {
-      dir: '.',
+      dir: './',
      reporters: [
        // reporters not supporting the `file` property
        { type: 'html', subdir: 'coverage' },
-       { type: 'lcov' }
+       { type: 'lcov', subdir: 'lcov' }
      ]
     }
 

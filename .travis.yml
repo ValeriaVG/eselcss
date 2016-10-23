@@ -10,4 +10,4 @@ before_script:
   - npm install -g gulp
 script: gulp
 after_script:
-  - codeclimate-test-reporter < lcov.info
+  - codeclimate-test-reporter < lcov/lcov.info
