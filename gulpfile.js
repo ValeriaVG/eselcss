@@ -53,11 +53,11 @@ gulp.task('minify-css',['compass'],function () {
     ;
 });
 
-gulp.task('test', function (done) {
+gulp.task('test',['coffee'], function (done) {
   new Server({
     configFile: __dirname + '/karma.conf.js',
     singleRun: true
   }, done).start();
 });
 
-gulp.task('default', ['coffee','minify-js','compass','minify-css']);
+gulp.task('default', ['coffee','test','minify-js','compass','minify-css']);
