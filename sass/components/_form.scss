@@ -1,31 +1,54 @@
-.form {
-    label {
-        display: block;
-    }
+label {
+    display: block;
+    height: $base-line-height;
+    @include adjust-font-size-to($base-font-size);
+    padding: 0;
+    margin: 0;
+}
 
-    input[type=email],
-    input[type=email],
-    input[type=number],
-    input[type=password],
-    input[type=tel],
-    input[type=text],
-    select {
-        border: 1px solid $border-color;
-        padding-left: $base-line-height/2;
-        padding-right: $base-line-height/2;
-        line-height: $base-line-height*1.5;
-        width: 100%;
-        box-sizing: border-box;
-        height: $base-line-height*1.5;
-    }
+input[type=email],
+input[type=email],
+input[type=number],
+input[type=password],
+input[type=tel],
+input[type=text],
+select {
+    border: 1px solid $border-color;
+    padding-left: $base-line-height/2;
+    padding-right: $base-line-height/2;
+    line-height: $base-line-height;
+    width: 100%;
+    box-sizing: border-box;
+    height: $base-line-height - 2px;
+}
 
-    textarea {
-        border: 1px solid $border-color;
-        width: 100%;
-        box-sizing: border-box;
-        @include rhythm-padding(0.5);
-        padding-left: $base-line-height/2;
-        padding-right: $base-line-height/2;
-        min-height: $base-line-height*5;
-    }
+input[type=checkbox],
+input[type=radio] {
+    height: $base-line-height;
+    padding: 0;
+    margin: 0 $base-line-height/2 0 0;
+    float: left;
+}
+
+input[type=file] {
+    box-sizing: border-box;
+    height: $base-line-height!important;
+    line-height: $base-line-height;
+    overflow:hidden;
+    border:none;
+    display:block;
+    margin:0;
+    padding:0;
+}
+
+textarea {
+    border: 1px solid $border-color;
+    width: 100%;
+    box-sizing: border-box;
+    padding-left: $base-line-height/2;
+    padding-right: $base-line-height/2;
+    height: $base-line-height*5;
+    line-height: $base-line-height;
+    resize:none;
+    display:block;
 }

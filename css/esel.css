@@ -8155,9 +8155,7 @@ a:hover {
 /* line 8, ../sass/components/_typography.scss */
 body {
   font-size: 16px;
-  font-size: 1rem;
   line-height: 25px;
-  line-height: 1.5625rem;
   font-family: "Roboto Condensed", sans-serif;
   color: rgba(0, 0, 0, 0.87);
 }
@@ -8183,14 +8181,10 @@ h6 {
 .h1,
 h1 {
   font-size: 52px;
-  font-size: 3.23607rem;
   line-height: 75px;
-  line-height: 4.6875rem;
   font-weight: bold;
-  padding-top: 13px;
-  padding-top: 0.78125rem;
-  padding-bottom: 13px;
-  padding-bottom: 0.78125rem;
+  padding-top: 12px;
+  padding-bottom: 12px;
   font-family: "Roboto Condensed", sans-serif;
   font-weight: bold;
   text-transform: none;
@@ -8200,12 +8194,9 @@ h1 {
 .h2,
 h2 {
   font-size: 26px;
-  font-size: 1.61803rem;
   line-height: 50px;
-  line-height: 3.125rem;
   font-weight: bold;
-  margin-bottom: 13px;
-  margin-bottom: 0.78125rem;
+  margin-bottom: 12px;
   font-family: "Roboto Condensed", sans-serif;
   font-weight: normal;
   text-transform: uppercase;
@@ -8215,48 +8206,36 @@ h2 {
 .h3,
 h3 {
   font-size: 19px;
-  font-size: 1.21353rem;
   line-height: 25px;
-  line-height: 1.5625rem;
   font-weight: bold;
-  margin-bottom: 13px;
-  margin-bottom: 0.78125rem;
+  margin-bottom: 12px;
 }
 
 /* line 57, ../sass/components/_typography.scss */
 .h4,
 h4 {
   font-size: 13px;
-  font-size: 0.80902rem;
   line-height: 25px;
-  line-height: 1.5625rem;
   font-weight: bold;
-  margin-bottom: 13px;
-  margin-bottom: 0.78125rem;
+  margin-bottom: 12px;
 }
 
 /* line 64, ../sass/components/_typography.scss */
 .h5,
 h5 {
   font-size: 16px;
-  font-size: 1rem;
   line-height: 25px;
-  line-height: 1.5625rem;
   font-weight: bold;
-  margin-bottom: 13px;
-  margin-bottom: 0.78125rem;
+  margin-bottom: 12px;
 }
 
 /* line 71, ../sass/components/_typography.scss */
 .h6,
 h6 {
   font-size: 16px;
-  font-size: 1rem;
   line-height: 25px;
-  line-height: 1.5625rem;
   font-weight: bold;
-  margin-bottom: 13px;
-  margin-bottom: 0.78125rem;
+  margin-bottom: 12px;
 }
 
 /* line 78, ../sass/components/_typography.scss */
@@ -8267,7 +8246,6 @@ p,
 pre,
 ul {
   margin-bottom: 25px;
-  margin-bottom: 1.5625rem;
 }
 
 /* line 87, ../sass/components/_typography.scss */
@@ -8281,11 +8259,8 @@ pre {
 code.block,
 pre.block {
   padding-top: 25px;
-  padding-top: 1.5625rem;
   padding-bottom: 25px;
-  padding-bottom: 1.5625rem;
   margin-top: 25px;
-  margin-top: 1.5625rem;
   display: block;
   padding-left: 16.5px;
   padding-right: 16.5px;
@@ -8370,7 +8345,6 @@ dl dd {
   padding-left: 21px;
   border-left: 2px solid rgba(0, 0, 0, 0.12);
   margin-bottom: 25px;
-  margin-bottom: 1.5625rem;
 }
 
 /* line 178, ../sass/components/_typography.scss */
@@ -8424,9 +8398,7 @@ hr.light {
 /* line 215, ../sass/components/_typography.scss */
 .smaller, small {
   font-size: 10px;
-  font-size: 0.61803rem;
   line-height: 25px;
-  line-height: 1.5625rem;
 }
 
 /* line 218, ../sass/components/_typography.scss */
@@ -8674,101 +8646,79 @@ sup {
 /* line 77, ../sass/components/_container.scss */
 .padded {
   padding-top: 25px;
-  padding-top: 1.5625rem;
   padding-bottom: 25px;
-  padding-bottom: 1.5625rem;
 }
 
 /* line 80, ../sass/components/_container.scss */
 .padded-half {
-  padding-top: 13px;
-  padding-top: 0.78125rem;
-  padding-bottom: 13px;
-  padding-bottom: 0.78125rem;
+  padding-top: 12px;
+  padding-bottom: 12px;
 }
 
 /* line 83, ../sass/components/_container.scss */
 .rhythm {
   margin-top: 25px;
-  margin-top: 1.5625rem;
   padding-top: 0px;
-  padding-top: 0rem;
   padding-bottom: 0px;
-  padding-bottom: 0rem;
   margin-bottom: 25px;
-  margin-bottom: 1.5625rem;
 }
 
 /* line 86, ../sass/components/_container.scss */
 .rhythm-half {
-  margin-top: 13px;
-  margin-top: 0.78125rem;
+  margin-top: 12px;
   padding-top: 0px;
-  padding-top: 0rem;
   padding-bottom: 0px;
-  padding-bottom: 0rem;
-  margin-bottom: 13px;
-  margin-bottom: 0.78125rem;
+  margin-bottom: 12px;
 }
 
 /* line 89, ../sass/components/_container.scss */
 .leader {
   margin-top: 25px;
-  margin-top: 1.5625rem;
 }
 
 /* line 92, ../sass/components/_container.scss */
 .leader-half {
-  margin-top: 13px;
-  margin-top: 0.78125rem;
+  margin-top: 12px;
 }
 
 /* line 95, ../sass/components/_container.scss */
 .padding-leader {
   padding-top: 25px;
-  padding-top: 1.5625rem;
 }
 
 /* line 98, ../sass/components/_container.scss */
 .padding-leader-half {
-  padding-top: 13px;
-  padding-top: 0.78125rem;
+  padding-top: 12px;
 }
 
 /* line 101, ../sass/components/_container.scss */
 .trailer {
   margin-bottom: 25px;
-  margin-bottom: 1.5625rem;
 }
 
 /* line 104, ../sass/components/_container.scss */
 .trailer-half {
-  margin-bottom: 13px;
-  margin-bottom: 0.78125rem;
+  margin-bottom: 12px;
 }
 
 /* line 107, ../sass/components/_container.scss */
 .trailer-double {
   margin-bottom: 50px;
-  margin-bottom: 3.125rem;
 }
 
 /* line 110, ../sass/components/_container.scss */
 .padding-trailer {
   padding-bottom: 25px;
-  padding-bottom: 1.5625rem;
 }
 
 /* line 113, ../sass/components/_container.scss */
 .padding-trailer-half {
-  padding-bottom: 13px;
-  padding-bottom: 0.78125rem;
+  padding-bottom: 12px;
 }
 
 /* line 116, ../sass/components/_container.scss */
 .padding-trailer-double {
   padding-bottom: 50px;
-  padding-bottom: 3.125rem;
 }
 
 /* line 119, ../sass/components/_container.scss */
@@ -8825,7 +8775,6 @@ img {
   margin-left: 0;
   margin-right: 0;
   margin-bottom: 25px;
-  margin-bottom: 1.5625rem;
 }
 /* line 27, ../sass/components/_grid.scss */
 .row.nomargin > * {
@@ -8841,14 +8790,10 @@ img {
   width: 100%;
   left: auto;
   right: auto;
-  margin-top: 13px;
-  margin-top: 0.78125rem;
+  margin-top: 12px;
   padding-top: 0px;
-  padding-top: 0rem;
   padding-bottom: 0px;
-  padding-bottom: 0rem;
-  margin-bottom: 13px;
-  margin-bottom: 0.78125rem;
+  margin-bottom: 12px;
 }
 /* line 48, ../sass/components/_grid.scss */
 .col.phone-1 {
@@ -9484,14 +9429,10 @@ nav {
 ul.nav {
   margin-bottom: 0;
   z-index: 96;
-  margin-top: 13px;
-  margin-top: 0.78125rem;
+  margin-top: 12px;
   padding-top: 0px;
-  padding-top: 0rem;
   padding-bottom: 0px;
-  padding-bottom: 0rem;
-  margin-bottom: 13px;
-  margin-bottom: 0.78125rem;
+  margin-bottom: 12px;
 }
 /* line 8, ../sass/components/_nav.scss */
 ul.nav li.dropdown ul > li {
@@ -9592,10 +9533,8 @@ ul.nav li:before {
 /* line 94, ../sass/components/_nav.scss */
 ul.nav li a {
   padding: 0 12.5px;
-  padding-top: 13px;
-  padding-top: 0.78125rem;
-  padding-bottom: 13px;
-  padding-bottom: 0.78125rem;
+  padding-top: 12px;
+  padding-bottom: 12px;
   display: block;
   text-decoration: none;
   color: inherit;
@@ -10079,10 +10018,8 @@ ul.inline-menu.centered {
     border-right: none;
     border-left: none;
     display: block;
-    padding-top: 13px;
-    padding-top: 0.78125rem;
-    padding-bottom: 13px;
-    padding-bottom: 0.78125rem;
+    padding-top: 12px;
+    padding-bottom: 12px;
     padding-left: 12.5px !important;
     padding-right: 12.5px !important;
     width: 100%;
@@ -10122,10 +10059,8 @@ ul.inline-menu.centered {
     border-right: none;
     border-left: none;
     display: block;
-    padding-top: 13px;
-    padding-top: 0.78125rem;
-    padding-bottom: 13px;
-    padding-bottom: 0.78125rem;
+    padding-top: 12px;
+    padding-bottom: 12px;
     padding-left: 12.5px !important;
     padding-right: 12.5px !important;
     width: 100%;
@@ -11652,13 +11587,11 @@ html body .tablet-and-less-show {
   border: 1px solid rgba(0, 0, 0, 0.12);
   color: rgba(0, 0, 0, 0.87);
   background: white;
-  padding-top: 13px;
-  padding-top: 0.78125rem;
-  padding-bottom: 13px;
-  padding-bottom: 0.78125rem;
+  padding-top: 12px;
+  padding-bottom: 12px;
   display: inline-block;
-  height: 25px;
-  line-height: 25px;
+  height: 23px;
+  line-height: 12.5px;
   padding: 0;
   box-sizing: content-box;
 }
@@ -11971,38 +11904,65 @@ html body .tablet-and-less-show {
   }
 }
 
-/* line 2, ../sass/components/_form.scss */
-.form label {
+/* line 1, ../sass/components/_form.scss */
+label {
   display: block;
+  height: 25px;
+  font-size: 16px;
+  line-height: 25px;
+  padding: 0;
+  margin: 0;
 }
-/* line 6, ../sass/components/_form.scss */
-.form input[type=email],
-.form input[type=email],
-.form input[type=number],
-.form input[type=password],
-.form input[type=tel],
-.form input[type=text],
-.form select {
+
+/* line 9, ../sass/components/_form.scss */
+input[type=email],
+input[type=email],
+input[type=number],
+input[type=password],
+input[type=tel],
+input[type=text],
+select {
   border: 1px solid rgba(0, 0, 0, 0.12);
   padding-left: 12.5px;
   padding-right: 12.5px;
-  line-height: 37.5px;
+  line-height: 25px;
   width: 100%;
   box-sizing: border-box;
-  height: 37.5px;
+  height: 23px;
 }
-/* line 22, ../sass/components/_form.scss */
-.form textarea {
+
+/* line 25, ../sass/components/_form.scss */
+input[type=checkbox],
+input[type=radio] {
+  height: 25px;
+  padding: 0;
+  margin: 0 12.5px 0 0;
+  float: left;
+}
+
+/* line 33, ../sass/components/_form.scss */
+input[type=file] {
+  box-sizing: border-box;
+  height: 25px !important;
+  line-height: 25px;
+  overflow: hidden;
+  border: none;
+  display: block;
+  margin: 0;
+  padding: 0;
+}
+
+/* line 44, ../sass/components/_form.scss */
+textarea {
   border: 1px solid rgba(0, 0, 0, 0.12);
   width: 100%;
   box-sizing: border-box;
-  padding-top: 13px;
-  padding-top: 0.78125rem;
-  padding-bottom: 13px;
-  padding-bottom: 0.78125rem;
   padding-left: 12.5px;
   padding-right: 12.5px;
-  min-height: 125px;
+  height: 125px;
+  line-height: 25px;
+  resize: none;
+  display: block;
 }
 
 /* line 1, ../sass/components/_breadcrumbs.scss */
@@ -12011,7 +11971,6 @@ ul.breadcrumbs {
   padding: 0;
   margin: 0;
   margin-bottom: 25px;
-  margin-bottom: 1.5625rem;
 }
 /* line 23, ../sass/components/_mixins.scss */
 ul.breadcrumbs:after {

@@ -1,0 +1,37 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+    <meta charset="utf-8">
+    <link href="css/esel.css" rel="stylesheet">
+    <link href="favicon.ico" rel="shortcut icon">
+    <meta name="viewport" content="initial-scale=1, width=device-width">
+    <title>EselCSS</title>
+</head>
+
+<body class="lined">
+    <div class="container">
+      <form class="form" method="POST" action="/">
+        <label>Input</label>
+        <input type="text" name="test" value="test">
+        <label>Number</label>
+        <input type="number" name="num" value="123456">
+        <label>Password</label>
+        <input type="password" name="pwd" value="test">
+        <div class="leader">
+          <input type="file" name="file">
+        </div>
+        <label class="leader"><input type="checkbox" name="checked" value="true"> Checkbox</label>
+        <label><input type="radio" name="radio" value="true"> Radio</label>
+        <label><input type="radio" name="radio" value="false"> Radio 2</label>
+
+        <textarea class="rhythm" name="message"></textarea>
+        <button class="btn">Submit</btn>
+      </form>
+    </div>
+
+<script src="https://code.jquery.com/jquery-2.2.4.min.js" integrity="sha256-BbhdlvQf/xTY9gja0Dq3HiwQF8LaCRTXxZKRutelT44=" crossorigin="anonymous"></script>
+<script src="js/esel.js"></script>
+</body>
+
+</html>

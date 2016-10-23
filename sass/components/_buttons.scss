@@ -6,8 +6,8 @@
   background:white;
   @include rhythm-padding(0.5);
   display:inline-block;
-  height:$base-line-height;
-  line-height: $base-line-height;
+  height:$base-line-height - 2px;
+  line-height: $base-line-height/2;
   padding: 0;
   box-sizing: content-box;
   &[disabled]{

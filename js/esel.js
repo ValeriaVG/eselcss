@@ -2,38 +2,6 @@
 (function() {
   var adjustModal;
 
-  window.sl = {
-    get_options: function(el, args) {
-      if (args[0] != null) {
-        return args[0];
-      } else {
-        return $(el).data();
-      }
-    },
-    show_overlay: function() {
-      if ($(".overlay").size() === 0) {
-        $("body").append('<div class="overlay"></div>');
-        $(".overlay").click(function() {
-          $(".modal").fadeOut();
-          return sl.hide_overlay();
-        });
-      }
-      return $(".overlay").fadeIn();
-    },
-    hide_overlay: function() {
-      if ($(".overlay").size()) {
-        return $(".overlay").fadeOut();
-      }
-    },
-    toggle_overlay: function() {
-      if ($(".overlay").is(":visible")) {
-        return sl.hide_overlay();
-      } else {
-        return sl.show_overlay();
-      }
-    }
-  };
-
   $.fn.dropdown = function() {
     var els;
     els = this;
@@ -46,6 +14,23 @@
         return $(el).find(">ul").stop().slideToggle();
       });
     });
+    return this;
+  };
+
+  $.fn.form = function() {
+    this.options = {
+      onSubmit: function() {},
+      onValidated: function(state) {
+        return state;
+      },
+      onFieldValid: function(field) {
+        $(field).removeClass("error");
+        return $(field).addClass("valid");
+      },
+      onFieldInvalid: function(field) {
+        return $(field).addClass("error");
+      }
+    };
     return this;
   };
 
@@ -114,5 +99,37 @@
       }
     });
   });
+
+  window.sl = {
+    get_options: function(el, args) {
+      if (args[0] != null) {
+        return args[0];
+      } else {
+        return $(el).data();
+      }
+    },
+    show_overlay: function() {
+      if ($(".overlay").size() === 0) {
+        $("body").append('<div class="overlay"></div>');
+        $(".overlay").click(function() {
+          $(".modal").fadeOut();
+          return sl.hide_overlay();
+        });
+      }
+      return $(".overlay").fadeIn();
+    },
+    hide_overlay: function() {
+      if ($(".overlay").size()) {
+        return $(".overlay").fadeOut();
+      }
+    },
+    toggle_overlay: function() {
+      if ($(".overlay").is(":visible")) {
+        return sl.hide_overlay();
+      } else {
+        return sl.show_overlay();
+      }
+    }
+  };
 
 }).call(this);
