@@ -18,7 +18,7 @@ $.fn.toggler = ()->
 
   return this;
 
-$(document).ready ->
+togglerInit= ()->
   $('[data-toggle]').each ()-> $(this).toggler()
   $('.modal').each ()->
     modal= $(this)
@@ -28,3 +28,8 @@ $(document).ready ->
   $("body").click (e)->
     if !e.target.hasAttribute "data-toggle"
       $('.toggle-target-opened:not(.modal)').hide()
+###
+ istanbul ignore next
+###
+$ ()->
+  togglerInit

@@ -7,7 +7,7 @@ window.sl = {
     }
   },
   show_overlay: function() {
-    if ($(".overlay").size() === 0) {
+    if ($(".overlay").length === 0) {
       $("body").append('<div class="overlay"></div>');
       $(".overlay").click(function() {
         $(".modal").fadeOut();
@@ -17,7 +17,7 @@ window.sl = {
     return $(".overlay").fadeIn();
   },
   hide_overlay: function() {
-    if ($(".overlay").size()) {
+    if ($(".overlay").length > 0) {
       return $(".overlay").fadeOut();
     }
   },

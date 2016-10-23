@@ -5,7 +5,7 @@ window.sl=
     else
       return $(el).data()
   show_overlay: ()->
-    if $(".overlay").size() == 0
+    if $(".overlay").length == 0
       $("body").append('<div class="overlay"></div>')
       $(".overlay").click ()->
         $(".modal").fadeOut()
@@ -14,7 +14,7 @@ window.sl=
     $(".overlay").fadeIn()
 
   hide_overlay: ()->
-      if $(".overlay").size()
+      if $(".overlay").length > 0
         $(".overlay").fadeOut()
 
   toggle_overlay: ()->

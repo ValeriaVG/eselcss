@@ -1,4 +1,4 @@
-var adjustModal;
+var adjustModal, initModal;
 
 adjustModal = function(target) {
   if ($(target).outerHeight() > ($(window).height() - $(target).css("padding-top").replace("px", "") * 4)) {
@@ -14,10 +14,18 @@ $.fn.modal = function() {
   return this;
 };
 
-$(document).ready(function() {
-  return $(window).resize(function() {
-    return $(".modal").each(function() {
-      return adjustModal(this);
-    });
+initModal = function() {
+  $(window).resize(function() {});
+  return $(".modal").each(function() {
+    return adjustModal(this);
   });
+};
+
+
+/*
+ istanbul ignore next
+ */
+
+$(function() {
+  return initModal;
 });

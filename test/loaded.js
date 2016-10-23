@@ -1,0 +1,3 @@
+togglerInit();
+initModal();
+$(window).resize();

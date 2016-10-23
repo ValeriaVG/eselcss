@@ -20,28 +20,28 @@
     </h1>
     <div class='clearfix'>
       <div class='fl pad1y space-right2'>
-        <span class="strong">6.67% </span>
+        <span class="strong">100% </span>
         <span class="quiet">Statements</span>
-        <span class='fraction'>1/15</span>
+        <span class='fraction'>15/15</span>
       </div>
       <div class='fl pad1y space-right2'>
-        <span class="strong">0% </span>
+        <span class="strong">87.5% </span>
         <span class="quiet">Branches</span>
-        <span class='fraction'>0/8</span>
+        <span class='fraction'>7/8</span>
       </div>
       <div class='fl pad1y space-right2'>
-        <span class="strong">0% </span>
+        <span class="strong">100% </span>
         <span class="quiet">Functions</span>
-        <span class='fraction'>0/5</span>
+        <span class='fraction'>5/5</span>
       </div>
       <div class='fl pad1y space-right2'>
-        <span class="strong">6.67% </span>
+        <span class="strong">100% </span>
         <span class="quiet">Lines</span>
-        <span class='fraction'>1/15</span>
+        <span class='fraction'>15/15</span>
       </div>
     </div>
   </div>
-  <div class='status-line low'></div>
+  <div class='status-line high'></div>
 <pre><table class="coverage">
 <tr><td class="line-count quiet">1
 2
@@ -76,63 +76,63 @@
 31
 32</td><td class="line-coverage quiet"><span class="cline-any cline-yes">1×</span>
 <span class="cline-any cline-neutral">&nbsp;</span>
-<span class="cline-any cline-no">&nbsp;</span>
-<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-yes">6×</span>
+<span class="cline-any cline-yes">1×</span>
 <span class="cline-any cline-neutral">&nbsp;</span>
-<span class="cline-any cline-no">&nbsp;</span>
-<span class="cline-any cline-neutral">&nbsp;</span>
-<span class="cline-any cline-neutral">&nbsp;</span>
-<span class="cline-any cline-neutral">&nbsp;</span>
-<span class="cline-any cline-no">&nbsp;</span>
-<span class="cline-any cline-no">&nbsp;</span>
-<span class="cline-any cline-no">&nbsp;</span>
-<span class="cline-any cline-no">&nbsp;</span>
-<span class="cline-any cline-no">&nbsp;</span>
-<span class="cline-any cline-neutral">&nbsp;</span>
-<span class="cline-any cline-neutral">&nbsp;</span>
-<span class="cline-any cline-no">&nbsp;</span>
-<span class="cline-any cline-neutral">&nbsp;</span>
-<span class="cline-any cline-neutral">&nbsp;</span>
-<span class="cline-any cline-no">&nbsp;</span>
-<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-yes">5×</span>
 <span class="cline-any cline-neutral">&nbsp;</span>
 <span class="cline-any cline-neutral">&nbsp;</span>
 <span class="cline-any cline-neutral">&nbsp;</span>
-<span class="cline-any cline-no">&nbsp;</span>
-<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-yes">4×</span>
+<span class="cline-any cline-yes">1×</span>
+<span class="cline-any cline-yes">1×</span>
+<span class="cline-any cline-yes">1×</span>
+<span class="cline-any cline-yes">1×</span>
 <span class="cline-any cline-neutral">&nbsp;</span>
-<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-yes">4×</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-yes">5×</span>
+<span class="cline-any cline-yes">5×</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-yes">6×</span>
+<span class="cline-any cline-yes">4×</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-yes">2×</span>
 <span class="cline-any cline-neutral">&nbsp;</span>
 <span class="cline-any cline-neutral">&nbsp;</span>
 <span class="cline-any cline-neutral">&nbsp;</span>
 <span class="cline-any cline-neutral">&nbsp;</span></td><td class="text"><pre class="prettyprint lang-js">window.sl = {
-  get_options: <span class="fstat-no" title="function not covered" >function(el, args) {</span>
-<span class="cstat-no" title="statement not covered" >    if (args[0] != null) {</span>
-<span class="cstat-no" title="statement not covered" >      return args[0];</span>
+  get_options: function(el, args) {
+    if (args[0] != null) {
+      return args[0];
     } else {
-<span class="cstat-no" title="statement not covered" >      return $(el).data();</span>
+      return $(el).data();
     }
   },
-  show_overlay: <span class="fstat-no" title="function not covered" >function() {</span>
-<span class="cstat-no" title="statement not covered" >    if ($(".overlay").size() === 0) {</span>
-<span class="cstat-no" title="statement not covered" >      $("body").append('&lt;div class="overlay"&gt;&lt;/div&gt;');</span>
-<span class="cstat-no" title="statement not covered" >      $(".overlay").click(<span class="fstat-no" title="function not covered" >function() {</span></span>
-<span class="cstat-no" title="statement not covered" >        $(".modal").fadeOut();</span>
-<span class="cstat-no" title="statement not covered" >        return sl.hide_overlay();</span>
+  show_overlay: function() {
+    if ($(".overlay").length === 0) {
+      $("body").append('&lt;div class="overlay"&gt;&lt;/div&gt;');
+      $(".overlay").click(function() {
+        $(".modal").fadeOut();
+        return sl.hide_overlay();
       });
     }
-<span class="cstat-no" title="statement not covered" >    return $(".overlay").fadeIn();</span>
+    return $(".overlay").fadeIn();
   },
-  hide_overlay: <span class="fstat-no" title="function not covered" >function() {</span>
-<span class="cstat-no" title="statement not covered" >    if ($(".overlay").size()) {</span>
-<span class="cstat-no" title="statement not covered" >      return $(".overlay").fadeOut();</span>
+  hide_overlay: function() {
+    <span class="missing-if-branch" title="else path not taken" >E</span>if ($(".overlay").length &gt; 0) {
+      return $(".overlay").fadeOut();
     }
   },
-  toggle_overlay: <span class="fstat-no" title="function not covered" >function() {</span>
-<span class="cstat-no" title="statement not covered" >    if ($(".overlay").is(":visible")) {</span>
-<span class="cstat-no" title="statement not covered" >      return sl.hide_overlay();</span>
+  toggle_overlay: function() {
+    if ($(".overlay").is(":visible")) {
+      return sl.hide_overlay();
     } else {
-<span class="cstat-no" title="statement not covered" >      return sl.show_overlay();</span>
+      return sl.show_overlay();
     }
   }
 };
@@ -142,7 +142,7 @@
 </div><!-- /wrapper -->
 <div class='footer quiet pad2 space-top1 center small'>
   Code coverage
-  generated by <a href="http://istanbul-js.org/" target="_blank">istanbul</a> at Sun Oct 23 2016 14:26:41 GMT+0300 (MSK)
+  generated by <a href="http://istanbul-js.org/" target="_blank">istanbul</a> at Sun Oct 23 2016 18:53:52 GMT+0300 (MSK)
 </div>
 </div>
 <script src="../prettify.js"></script>

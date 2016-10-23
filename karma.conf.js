@@ -2,13 +2,15 @@ module.exports = function(config) {
   config.set({
 
     browsers: ['Firefox'],
-    frameworks: ['jasmine','jquery-2.1.0'],
+    frameworks: ['jasmine'],
     files: [
-      'js/script.js',
+      'vendor/jquery-3.1.1.min.js',
+      'test/boot.js',
       'js/components/*.js',
-      'test/**/*.spec.js'
+      'test/**/*.spec.js',
+      'css/esel.min.css',
+      'test/loaded.js'
     ],
-
     // coverage reporter generates the coverage
     reporters: ['progress', 'coverage'],
 

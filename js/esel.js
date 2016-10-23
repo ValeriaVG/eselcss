@@ -7,7 +7,7 @@ window.sl = {
     }
   },
   show_overlay: function() {
-    if ($(".overlay").size() === 0) {
+    if ($(".overlay").length === 0) {
       $("body").append('<div class="overlay"></div>');
       $(".overlay").click(function() {
         $(".modal").fadeOut();
@@ -17,7 +17,7 @@ window.sl = {
     return $(".overlay").fadeIn();
   },
   hide_overlay: function() {
-    if ($(".overlay").size()) {
+    if ($(".overlay").length > 0) {
       return $(".overlay").fadeOut();
     }
   },
@@ -45,7 +45,7 @@ $.fn.dropdown = function() {
   return this;
 };
 
-var adjustModal;
+var adjustModal, initModal;
 
 adjustModal = function(target) {
   if ($(target).outerHeight() > ($(window).height() - $(target).css("padding-top").replace("px", "") * 4)) {
@@ -61,13 +61,23 @@ $.fn.modal = function() {
   return this;
 };
 
-$(document).ready(function() {
-  return $(window).resize(function() {
-    return $(".modal").each(function() {
-      return adjustModal(this);
-    });
+initModal = function() {
+  $(window).resize(function() {});
+  return $(".modal").each(function() {
+    return adjustModal(this);
   });
+};
+
+
+/*
+ istanbul ignore next
+ */
+
+$(function() {
+  return initModal;
 });
+
+var togglerInit;
 
 $.fn.toggler = function() {
   var el, options, target;
@@ -91,7 +101,7 @@ $.fn.toggler = function() {
   return this;
 };
 
-$(document).ready(function() {
+togglerInit = function() {
   $('[data-toggle]').each(function() {
     return $(this).toggler();
   });
@@ -109,4 +119,13 @@ $(document).ready(function() {
       return $('.toggle-target-opened:not(.modal)').hide();
     }
   });
+};
+
+
+/*
+ istanbul ignore next
+ */
+
+$(function() {
+  return togglerInit;
 });

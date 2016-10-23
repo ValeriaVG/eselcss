@@ -1,3 +1,5 @@
+var togglerInit;
+
 $.fn.toggler = function() {
   var el, options, target;
   options = sl.get_options(this, arguments);
@@ -20,7 +22,7 @@ $.fn.toggler = function() {
   return this;
 };
 
-$(document).ready(function() {
+togglerInit = function() {
   $('[data-toggle]').each(function() {
     return $(this).toggler();
   });
@@ -38,4 +40,13 @@ $(document).ready(function() {
       return $('.toggle-target-opened:not(.modal)').hide();
     }
   });
+};
+
+
+/*
+ istanbul ignore next
+ */
+
+$(function() {
+  return togglerInit;
 });

@@ -9,8 +9,12 @@ $.fn.modal = ()->
   adjustModal this
   return this
 
-
-$(document).ready ()->
-  $(window).resize ()->
+initModal = ()->
+    $(window).resize ()->
     $(".modal").each ()->
       adjustModal this
+###
+ istanbul ignore next
+###
+$ ()->
+  initModal

@@ -9236,6 +9236,10 @@ html body .tablet-and-less-show {
   }
 }
 
+html body .hidden {
+  display: none;
+}
+
 .btn {
   cursor: pointer;
   outline: none !important;
