@@ -17,5 +17,8 @@ ratings:
   paths:
   - "**.css"
   - "**.coffee"
-
-exclude_paths: []
+exclude_paths:
+- "test/"
+- "patterns/"
+- "**/vendor/"
+- "*.rb"
