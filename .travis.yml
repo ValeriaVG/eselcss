@@ -2,7 +2,7 @@ language: node_js
 code_climate:
     repo_token: d92756e3a01c29107e49a47403d17841ba69c08ea7d53eadff0d2ccca1e8592a
 node_js:
-  - "6.1"
+  - "6.8.1"
 
 before_script:
   - "export DISPLAY=:99.0"
