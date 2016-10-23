@@ -4,9 +4,12 @@ label {
     @include adjust-font-size-to($base-font-size);
     padding: 0;
     margin: 0;
+    &.error{
+      background:palette("red","500");
+      color:text("light-primary");
+    }
 }
 
-input[type=email],
 input[type=email],
 input[type=number],
 input[type=password],
@@ -20,6 +23,12 @@ select {
     width: 100%;
     box-sizing: border-box;
     height: $base-line-height - 2px;
+    &.error{
+      border-color:palette("red","A700");
+    }
+    &.valid{
+      border-color:palette("teal","A700");
+    }
 }
 
 input[type=checkbox],

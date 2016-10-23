@@ -1,0 +1,35 @@
+{
+  "name": "eselcss",
+  "version": "1.0.0",
+  "description": "**Responsive CSS framework with vertical rhythm**",
+  "main": "gulpfile.js",
+  "scripts": {
+    "test": "gulp test"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/ValeriaVG/eselcss.git"
+  },
+  "author": "",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/ValeriaVG/eselcss/issues"
+  },
+  "homepage": "https://github.com/ValeriaVG/eselcss#readme",
+  "devDependencies": {
+    "gulp": "^3.9.1",
+    "gulp-coffee": "^2.3.2",
+    "gulp-compass": "^2.1.0",
+    "gulp-concat": "^2.6.0",
+    "gulp-minify-css": "^1.2.4",
+    "gulp-rename": "^1.2.2",
+    "gulp-sass": "^2.3.2",
+    "gulp-uglify": "^2.0.0",
+    "gulp-util": "^3.0.7",
+    "jasmine-core": "^2.5.2",
+    "karma": "^1.3.0",
+    "karma-chrome-launcher": "^2.0.0",
+    "karma-firefox-launcher": "^1.0.0",
+    "karma-jasmine": "^1.0.2"
+  }
+}

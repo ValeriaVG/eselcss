@@ -3,7 +3,7 @@
 
 <head>
     <meta charset="utf-8">
-    <link href="css/esel.css" rel="stylesheet">
+    <link href="css/esel.min.css" rel="stylesheet">
     <link href="favicon.ico" rel="shortcut icon">
     <meta name="viewport" content="initial-scale=1, width=device-width">
     <title>EselCSS</title>
@@ -13,11 +13,11 @@
     <div class="container">
       <form class="form" method="POST" action="/">
         <label>Input</label>
-        <input type="text" name="test" value="test">
+        <input type="text" name="test" value="test" required>
         <label>Number</label>
         <input type="number" name="num" value="123456">
         <label>Password</label>
-        <input type="password" name="pwd" value="test">
+        <input type="password" name="pwd" value="test" required>
         <div class="leader">
           <input type="file" name="file">
         </div>
@@ -29,9 +29,19 @@
         <button class="btn">Submit</btn>
       </form>
     </div>
-
-<script src="https://code.jquery.com/jquery-2.2.4.min.js" integrity="sha256-BbhdlvQf/xTY9gja0Dq3HiwQF8LaCRTXxZKRutelT44=" crossorigin="anonymous"></script>
+<script src="js/vendor/jquery-3.1.1.min.js"></script>
+<script src="js/vendor/jquery-validation/jquery.validate.min.js"></script>
 <script src="js/esel.js"></script>
+<script>
+var validator = $( ".form" ).validate({
+  submitHandler: function(form) {
+  alert("its valid");
+}
+
+});
+validator.form();
+
+</script>
 </body>
 
 </html>
