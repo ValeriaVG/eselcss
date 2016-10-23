@@ -3,7 +3,7 @@ $grid-background-baseline-height:$base-line-height;
 $grid-background-column-width:$base-line-height;
 $grid-background-gutter-width:$base-line-height;
 $grid-background-total-columns:48;
-body.lined {
+.lined {
     @include baseline-grid-background();
 }
 

@@ -4,7 +4,7 @@ module.exports = function(config) {
     browsers: ['Firefox'],
     frameworks: ['jasmine'],
     files: [
-      'vendor/jquery-2.2.4.min.js',
+      'vendor/jquery-3.1.1.min.js',
       'test/boot.js',
       'js/components/*.js',
       'test/**/*.spec.js',

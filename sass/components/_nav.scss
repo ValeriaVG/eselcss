@@ -80,7 +80,7 @@ ul.nav {
           position: absolute;
           margin-top:-1px;
     z-index: 97;
-    
+
     left: 0;
     border-top: 1px solid rgba(255,255,255,.12);
     width: 100%;
@@ -160,10 +160,10 @@ ul.inline-menu{
 
   }
   &.smaller:not(.right)>li:first-child{
-    &,&>a{padding-left:0px;}
+    &,&>a{padding-left:0;}
   }
   &.smaller.right>li:last-child{
-    &,&>a{padding-right:0px;}
+    &,&>a{padding-right:0;}
   }
 }
 

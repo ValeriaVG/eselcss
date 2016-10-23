@@ -63,4 +63,4 @@ gulp.task('test',['coffee'], function (done) {
   }, done).start();
 });
 
-gulp.task('default', ['coffee','test','minify-js','compass','minify-css']);
+gulp.task('default', ['coffee','minify-js','compass','minify-css']);
