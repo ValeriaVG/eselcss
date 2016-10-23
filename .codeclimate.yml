@@ -22,5 +22,6 @@ exclude_paths:
 - "patterns/"
 - "**/vendor/"
 - "*.rb"
+- "js/*"
 - "node-modules/"
 - "coverage/"
