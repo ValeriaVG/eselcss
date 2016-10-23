@@ -10,9 +10,9 @@ $.fn.modal = ()->
   return this
 
 initModal = ()->
-    $(window).resize ()->
-    $(".modal").each ()->
-      adjustModal this
+  $(window).resize ()->
+  $(".modal").each ()->
+    adjustModal this
 ###
  istanbul ignore next
 ###

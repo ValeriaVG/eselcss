@@ -4,6 +4,11 @@ engines:
     enabled: true
   coffeelint:
     enabled: true
+    checks:
+      important:
+        enabled: false
+      fallback-colors:
+        enabled: false
   duplication:
     enabled: false
     config:

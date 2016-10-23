@@ -14,8 +14,8 @@ window.sl=
     $(".overlay").fadeIn()
 
   hide_overlay: ()->
-      if $(".overlay").length > 0
-        $(".overlay").fadeOut()
+    if $(".overlay").length > 0
+      $(".overlay").fadeOut()
 
   toggle_overlay: ()->
     if $(".overlay").is(":visible")

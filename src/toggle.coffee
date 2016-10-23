@@ -7,15 +7,14 @@ $.fn.toggler = ()->
     $(target).toggleClass "toggle-target-opened"
     e.preventDefault()
     switch options.toggle
-        when "slide"
-          target.stop().slideToggle(options.options)
-        when "fade"
-          target.stop().fadeToggle(options.options)
-        when "modal"
-          $(target).modal(options).stop().fadeToggle(options.options)
-        else
-          target.stop().toggle(options.options)
-
+      when "slide"
+        target.stop().slideToggle(options.options)
+      when "fade"
+        target.stop().fadeToggle(options.options)
+      when "modal"
+        $(target).modal(options).stop().fadeToggle(options.options)
+      else
+        target.stop().toggle(options.options)
   return this;
 
 togglerInit= ()->

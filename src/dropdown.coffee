@@ -4,6 +4,6 @@ $.fn.dropdown = ()->
     el=this
     event = if (window.ontouchstart!=undefined) then 'click' else 'mouseenter mouseleave'
     $(el).on event, (e)->
-        e.preventDefault()
-        $(el).find(">ul").stop().slideToggle()
+      e.preventDefault()
+      $(el).find(">ul").stop().slideToggle()
   return this;
