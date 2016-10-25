@@ -1,0 +1,115 @@
+.jGrowl {
+	z-index: 9999;
+	color: text("dark-primary");
+	font-size: $base-font-size;
+	position: fixed;
+
+	&.top-left {
+		left: $base-line-height;
+		top: $base-line-height;
+	}
+
+	&.top-right {
+		right: $base-line-height;
+		top: $base-line-height;
+	}
+
+	&.bottom-left {
+		left: $base-line-height;
+		bottom: $base-line-height;
+	}
+
+	&.bottom-right {
+		right: $base-line-height;
+		bottom: $base-line-height;
+	}
+
+	&.center {
+		top: $base-line-height;
+		width: 50%;
+		left: 25%;
+
+		.jGrowl-closer,
+		.jGrowl-notification {
+			margin-left: auto;
+			margin-right: auto;
+		}
+	}
+}
+@mixin notification() {
+	background-color: palette("blue-gray","50");
+	opacity: 0.9;
+	zoom: 1;
+	width: 320px - ($base-line-height*2);
+	@include trailer();
+	text-align: left;
+	display: none;
+	border-radius: $base-line-height/2;
+
+
+
+}
+
+.jGrowl-notification {
+	@include notification();
+	box-shadow: 0px 0px $base-line-height $base-line-height/2 text("dark-divider");
+	min-height: $base-line-height*5;
+color:text("dark-secondary");
+	.jGrowl-header {
+		font-weight: bold;
+		border-top-left-radius: $base-line-height/2;
+		border-top-right-radius: $base-line-height/2;
+		background: palette("blue-gray","500");
+		color:text("light-primary");
+		padding:0 $base-line-height;
+	}
+
+	.jGrowl-close {
+		background-color: text("light-primary");
+		color:text("dark-primary");
+		border:1px solid text("dark-divider");
+		color: inherit;
+		border: none;
+		z-index: 99;
+		float: right;
+		font-weight: bold;
+		font-size:1.2em;
+		width:$base-line-height;
+		height:$base-line-height;
+		cursor: pointer;
+		border-radius: $base-line-height;
+		margin:(0-$base-line-height/2) (0-$base-line-height/2) 0 0;
+		padding:0;
+
+	}
+
+	.jGrowl-message{
+			padding:$base-line-height;
+	}
+
+	@each $name,$color in $palette{
+		&.#{$name}ed{
+			background:map-get($color,"50");
+
+			.jGrowl-header{
+				background:map-get($color,"500");
+			}
+
+		}
+	}
+
+}
+
+.jGrowl-closer {
+	@include notification();
+	cursor: pointer;
+	@include adjust-font-size-to(.7em);
+	font-weight: bold;
+	text-align: center;
+}
+/** Hide jGrowl when printing **/
+@media print {
+	.jGrowl {
+		display: none;
+	}
+}
