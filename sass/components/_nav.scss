@@ -9,7 +9,7 @@ ul.nav {
     width: 100%;
 }
 &.light{
-  &,& a{color:text("light-primary");
+  &,& a,& span{color:text("light-primary");
     &:hover,&.active{
       color:text("light-primary")
     }
@@ -25,7 +25,7 @@ ul.nav {
       border:none;
       border-right:1px solid text("light-divider");
     }
-    &.dropdown ul li a{
+    &.dropdown ul li>a{
       border-bottom:1px solid text("light-divider");
     }
       &:last-child>a{
@@ -91,7 +91,7 @@ ul.nav {
             display: none;
         }
 
-        a {
+        a,span {
             padding: 0 $base-line-height/2;
             @include rhythm-padding(0.5);
             display: block;
@@ -104,8 +104,8 @@ ul.nav {
         }
     }
     &.bordered{
-      li>a{border-bottom: 1px solid text("dark-divider");box-sizing:border-box;margin-top:-1px;}
-      li:last-child>a{
+      li>a,li>span{border-bottom: 1px solid text("dark-divider");box-sizing:border-box;margin-top:-1px;}
+      li:last-child>a,li:last-child>span{
         border-bottom:none;
       }
 
@@ -122,7 +122,7 @@ ul.nav {
         }
       }
       &.left-#{$name}-border-menu{
-        &>li>a,&>li>a{
+        &>li>a,&>li>span{
             border-left:4px solid transparent;
         }
         &>li>a:hover,&>li.active>a{
@@ -173,9 +173,9 @@ ul.centered{
   li{
     float:none;
   }
-  -webkit-flex-direction: row; /* Safari */
+  -webkit-flex-direction: row;
   flex-direction:         row;
-  -webkit-flex-wrap: nowrap; /* Safari */
+  -webkit-flex-wrap: nowrap;
 flex-wrap:         nowrap;
 -webkit-justify-content: center;
 justify-content: center;

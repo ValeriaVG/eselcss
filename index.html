@@ -83,12 +83,60 @@
   </pre>
 
     </div>
+    <div class="modal big">
+      <p>Unum nescio, quo modo possit, si luxuriosus sit, finitas cupiditates habere. Omnia peccata paria dicitis. </p>
+
+      <ol>
+          <li>Quae sequuntur igitur?</li>
+          <li>Se dicere inter honestum et turpe nimium quantum, nescio quid inmensum, inter ceteras res nihil omnino interesse.</li>
+          <li>Eorum enim est haec querela, qui sibi cari sunt seseque diligunt.</li>
+          <li>Conferam tecum, quam cuique verso rem subicias;</li>
+      </ol>
+
+
+      <dl>
+          <dt><dfn>Eam stabilem appellas.</dfn></dt>
+          <dd>Estne, quaeso, inquam, sitienti in bibendo voluptas?</dd>
+          <dt><dfn>Quis enim redargueret?</dfn></dt>
+          <dd>Universa enim illorum ratione cum tota vestra confligendum puto.</dd>
+          <dt><dfn>Respondeat totidem verbis.</dfn></dt>
+          <dd>Ut placet, inquit, etsi enim illud erat aptius, aequum cuique concedere.</dd>
+          <dt><dfn>Quibusnam praeteritis?</dfn></dt>
+          <dd>Curium putes loqui, interdum ita laudat, ut quid praeterea sit bonum neget se posse ne suspicari quidem.</dd>
+          <dt><dfn>Si quae forte-possumus.</dfn></dt>
+          <dd>Unum est sine dolore esse, alterum cum voluptate.</dd>
+          <dt><dfn>Tria genera bonorum;</dfn></dt>
+          <dd>Primum cur ista res digna odio est, nisi quod est turpis?</dd>
+      </dl>
+
+
+      <pre class="block">
+Ut bacillum aliud est inflexum et incurvatum de industria,
+aliud ita natum, sic ferarum natura non est illa quidem
+depravata mala disciplina, sed natura sua.
+
+Quis est enim, qui hoc cadere in sapientem dicere audeat,
+ut, si fieri possit, virtutem in perpetuum abiciat, ut
+dolore omni liberetur?
+</pre>
+    </div>
+
+<button class="btn fixed bottom right" onClick="$('body').toggleClass('lined')">Toggle Lines</button>
+<button class="btn fixed bottom left" onClick="$('body>.container').toggleClass('show-grids')">Toggle Columns</button>
     <script src="vendor/jquery-3.1.1.min.js"></script>
     <script src="vendor/singleparallax.js"></script>
     <script src="vendor/jquery.jgrowl.js"></script>
+    <script src="vendor/jquery.nicescroll.min.js"></script>
     <script src="js/esel.js"></script>
     <script>
+    $(document).ready(function() {
+    $("html").niceScroll();
+    $(".modal").niceScroll();
+    $(".table").niceScroll();
+});
     $.jGrowl("Hello world!");
+    initModal();
+    $(".modal").modal("show");
     </script>
 
 

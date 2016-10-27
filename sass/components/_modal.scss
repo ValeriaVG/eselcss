@@ -8,7 +8,9 @@
     display: none;
     z-index: 98;
 }
-
+body.overlay-opened{
+  overflow:hidden;
+}
 .modal {
   &>.close-modal{
     position: absolute;
@@ -29,4 +31,22 @@
     @include media-more-than($tablet) {
         width: $tablet - $base-line-height*2;
     }
+
+  &.small{
+    @include media-more-than($phone) {
+        width: $phone - $base-line-height*2;
+    }
+    @include media-more-than($tablet) {
+        width: 480px - $base-line-height*2;
+    }
+  }
+  &.big{
+
+    @include media-more-than($tablet) {
+        width: $tablet - $base-line-height*2;
+    }
+    @include media-more-than($desktop) {
+        width: $desktop - $base-line-height*2;
+    }
+  }
 }

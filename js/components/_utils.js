@@ -9,6 +9,7 @@ window.sl = {
   show_overlay: function() {
     if ($(".overlay").length === 0) {
       $("body").append('<div class="overlay"></div>');
+      $("body").addClass("overlay-opened");
       $(".overlay").click(function() {
         $(".modal").fadeOut();
         return sl.hide_overlay();
@@ -17,6 +18,7 @@ window.sl = {
     return $(".overlay").fadeIn();
   },
   hide_overlay: function() {
+    $("body").removeClass("overlay-opened");
     if ($(".overlay").length > 0) {
       return $(".overlay").fadeOut();
     }

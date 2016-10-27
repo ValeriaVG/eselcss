@@ -44,7 +44,7 @@
 	@include trailer();
 	text-align: left;
 	display: none;
-	border-radius: $base-line-height/2;
+	border-radius: $base-radius;
 
 
 
@@ -53,12 +53,13 @@
 .jGrowl-notification {
 	@include notification();
 	box-shadow: 0px 0px $base-line-height $base-line-height/2 text("dark-divider");
-	min-height: $base-line-height*5;
+	min-height: $base-line-height;
+	box-sizing: border-box;
 color:text("dark-secondary");
 	.jGrowl-header {
 		font-weight: bold;
-		border-top-left-radius: $base-line-height/2;
-		border-top-right-radius: $base-line-height/2;
+		border-top-left-radius: $base-radius;
+		border-top-right-radius: $base-radius;
 		background: palette("blue-gray","500");
 		color:text("light-primary");
 		padding:0 $base-line-height;

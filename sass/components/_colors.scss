@@ -330,24 +330,24 @@ $opaque-text:(
     }
   }
   .border-#{$name}{
-    border-color:map-get($color,"500");
+    border-color:map-get($color,"500")!important;
   }
   a.hover-border-#{$name}:hover,ul.hover-border-#{$name}>li>a:hover{
-    border-color:map-get($color,"500");
+    border-color:map-get($color,"500")!important;
   }
   a.hover-#{$name}:hover,ul.hover-#{$name}>li>a:hover{
-    color:map-get($color,"500");
+    color:map-get($color,"500")!important;
   }
   a.bg-hover-#{$name}:hover,ul.bg-hover-#{$name}>li>a:hover{
     background:map-get($color,"500")!important;
   }
   @each $tone,$value in $color{
     .#{$name}-#{$tone}{
-      color:$value;
+      color:$value!important;
     }
     .bg-#{$name}-#{$tone}{
       &,& .dropdown ul{
-        background-color:$value;
+        background-color:$value!important;
       }
     }
 

@@ -4,11 +4,12 @@
   padding-right:$base-line-height;
   @include clearfix();
   margin: 0 auto;
+  min-width:320px;
   @include media-more-than($phone){
-    width:$phone;
+    min-width:$phone;
   }
   @include media-more-than($tablet){
-    width:$tablet;
+    min-width:$tablet;
   }
   @include media-more-than($desktop){
     width:$desktop;
@@ -125,6 +126,7 @@ img{
 }
 .segment{
   padding:$base-line-height;
+  display:block;
 }
 .no-trailer{
   margin-bottom:0!important;

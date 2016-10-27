@@ -7,6 +7,7 @@ window.sl=
   show_overlay: ()->
     if $(".overlay").length == 0
       $("body").append('<div class="overlay"></div>')
+      $("body").addClass("overlay-opened")
       $(".overlay").click ()->
         $(".modal").fadeOut()
         sl.hide_overlay()
@@ -14,6 +15,7 @@ window.sl=
     $(".overlay").fadeIn()
 
   hide_overlay: ()->
+    $("body").removeClass("overlay-opened")
     if $(".overlay").length > 0
       $(".overlay").fadeOut()
 

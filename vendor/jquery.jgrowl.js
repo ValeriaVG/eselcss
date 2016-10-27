@@ -157,6 +157,7 @@
 (function($) {
 	/** jGrowl Wrapper - Establish a base jGrowl Container for compatibility with older releases. **/
 	$.jGrowl = function( m , o ) {
+
 		// To maintain compatibility with older version that only supported one instance we'll create the base container.
 		if ( $('#jGrowl').length === 0 )
 			$('<div id="jGrowl"></div>').addClass( (o && o.position) ? o.position : $.jGrowl.defaults.position ).appendTo( (o && o.appendTo) ? o.appendTo : $.jGrowl.defaults.appendTo );
@@ -258,9 +259,10 @@
 			var self = this;
 			var message = n.message;
 			var o = n.options;
-
+console.log(o);
 			// Support for jQuery theme-states, if this is not used it displays a widget header
 			o.themeState = (o.themeState === '') ? '' : 'ui-state-' + o.themeState;
+
 
 			var notification = $('<div/>')
 				.addClass('jGrowl-notification alert ' + o.themeState + ' ui-corner-all' + ((o.group !== undefined && o.group !== '') ? ' ' + o.group : ''))

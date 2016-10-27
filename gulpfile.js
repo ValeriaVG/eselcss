@@ -63,4 +63,10 @@ gulp.task('test',['coffee'], function (done) {
   }, done).start();
 });
 
+
+gulp.task('cp',['compass','minify-css'], function () {
+  gulp.src('./css/esel.min.css')
+      .pipe(gulp.dest('/var/www/esel/public_html/public/css/'))
+});
+
 gulp.task('default', ['coffee','minify-js','compass','minify-css']);

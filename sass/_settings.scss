@@ -24,8 +24,8 @@ $phone:480px;
 
 
 $main-header-font:sans-serif!default;
-$main-header-weight:bold!default;
-$main-header-transform:none!default;
+$main-header-weight:normal!default;
+$main-header-transform:uppercase!default;
 
 $header-font:sans-serif!default;
 $header-weight:bold!default;
@@ -33,9 +33,11 @@ $header-transform:none!default;
 
 $text-font:sans-serif!default;
 
-$link-color:palette("purple","500");
-$link-hover-color:palette("purple","700");
+$link-color:palette("green","500");
+$link-hover-color:palette("green","700");
 
-$primary-color:palette("purple","500");
+$primary-color:palette("teal","800");
 
 $overlay-bg:rgba(0,0,0,0.87);
+
+$base-radius:0;

@@ -1,12 +1,13 @@
 label {
     display: block;
-    height: $base-line-height;
+    min-height: $base-line-height;
     @include adjust-font-size-to($base-font-size);
     padding: 0;
     margin: 0;
     &.error{
       background:palette("red","500");
       color:text("light-primary");
+      padding: $base-line-height/2;
     }
 }
 
@@ -15,19 +16,23 @@ input[type=number],
 input[type=password],
 input[type=tel],
 input[type=text],
+input[type=search],
 select {
     border: 1px solid $border-color;
-    padding-left: $base-line-height/2;
-    padding-right: $base-line-height/2;
-    line-height: $base-line-height;
+    padding: $base-line-height/2;
+    line-height: $base-line-height*2;
     width: 100%;
     box-sizing: border-box;
-    height: $base-line-height - 2px;
+    height: $base-line-height*2;
     &.error{
       border-color:palette("red","A700");
     }
     &.valid{
       border-color:palette("teal","A700");
+    }
+    margin-top:1px;
+    &.fluid{
+      width:100%;
     }
 }
 
@@ -60,4 +65,8 @@ textarea {
     line-height: $base-line-height;
     resize:none;
     display:block;
+}
+
+textarea.richText{
+  height: $base-line-height*10;
 }

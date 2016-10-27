@@ -29,7 +29,7 @@ h6 {
 
 .h1,
 h1 {
-    @include adjust-font-size-to($base-font-size*2*$ratio);
+    @include adjust-font-size-to($base-font-size*$ratio);
     font-weight: bold;
     @include rhythm-padding(0.5);
     font-family: $main-header-font;
@@ -39,7 +39,7 @@ h1 {
 
 .h2,
 h2 {
-    @include adjust-font-size-to($base-font-size*$ratio);
+    @include adjust-font-size-to($base-font-size*($ratio - 0.17));
     font-weight: bold;
     @include trailer(0.5);
     font-family: $header-font;
@@ -49,14 +49,14 @@ h2 {
 
 .h3,
 h3 {
-    @include adjust-font-size-to($base-font-size*0.75*$ratio);
+    @include adjust-font-size-to($base-font-size*($ratio - 0.34));
     font-weight: bold;
     @include trailer(.5);
 }
 
 .h4,
 h4 {
-    @include adjust-font-size-to($base-font-size*0.5*$ratio);
+    @include adjust-font-size-to($base-font-size*($ratio - 0.5));
     font-weight: bold;
     @include trailer(.5);
 }

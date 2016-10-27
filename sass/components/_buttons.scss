@@ -4,12 +4,12 @@
   border:1px solid $border-color;
   color:text("dark-primary");
   background:white;
-  @include rhythm-padding(0.5);
+
   display:inline-block;
-  height:$base-line-height - 2px;
+  height:$base-line-height;
   line-height: $base-line-height/2;
-  padding: 0;
-  box-sizing: content-box;
+  padding: 0 $base-line-height/2;
+  box-sizing: border-box;
   &[disabled]{
     opacity:0.5;
   }
@@ -17,7 +17,7 @@
   padding-left: $base-line-height/2;
   padding-right: $base-line-height/2;
   height:$base-line-height*2;
-  line-height: $base-line-height*2;
+  line-height: $base-line-height;
   }
   &.transparent{
     background:transparent;
@@ -42,4 +42,23 @@
       transition: 500ms;
     }
   }
+}
+
+// Fixed position buttons
+
+.fixed{
+  position: fixed;
+  &.top{
+    top:$base-line-height;
+  }
+  &.left{
+    left:$base-line-height;
+  }
+  &.right{
+    right:$base-line-height;
+  }
+  &.bottom{
+    bottom:$base-line-height;
+  }
+
 }
