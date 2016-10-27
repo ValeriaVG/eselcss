@@ -253,3 +253,16 @@ sup{
   font-size: smaller;
   vertical-align: super;
 }
+
+table.table{
+  thead{
+    tr{
+      background: text("dark-divider");
+    }
+  }
+  tbody{
+    tr:nth-child(2n){
+      background: palette("blue-gray","50");
+    }
+  }
+}

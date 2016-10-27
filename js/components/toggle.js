@@ -6,7 +6,9 @@ $.fn.toggler = function() {
   el = $(this);
   target = options.target != null ? $(options.target) : $(el.attr("href"));
   el.click(function(e) {
-    $(target).toggleClass("toggle-target-opened");
+    if (!$(target).hasClass("modal")) {
+      $(target).toggleClass("toggle-target-opened");
+    }
     e.preventDefault();
     switch (options.toggle) {
       case "slide":
@@ -14,7 +16,8 @@ $.fn.toggler = function() {
       case "fade":
         return target.stop().fadeToggle(options.options);
       case "modal":
-        return $(target).modal(options).stop().fadeToggle(options.options);
+        $(target).modal(options);
+        return $(target).modal('show');
       default:
         return target.stop().toggle(options.options);
     }
@@ -31,7 +34,7 @@ togglerInit = function() {
     modal = $(this);
     return modal.find(".close-modal").each(function() {
       return $(this).click(function() {
-        return modal.modal().hide();
+        return modal.modal("hide");
       });
     });
   });

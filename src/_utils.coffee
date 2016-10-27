@@ -5,9 +5,9 @@ window.sl=
     else
       return $(el).data()
   show_overlay: ()->
+    $("body").addClass("overlay-opened")
     if $(".overlay").length == 0
       $("body").append('<div class="overlay"></div>')
-      $("body").addClass("overlay-opened")
       $(".overlay").click ()->
         $(".modal").fadeOut()
         sl.hide_overlay()

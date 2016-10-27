@@ -4,7 +4,7 @@ $.fn.toggler = ()->
   target =  if options.target? then $(options.target) else $(el.attr "href")
 
   el.click (e)->
-    $(target).toggleClass "toggle-target-opened"
+    $(target).toggleClass "toggle-target-opened" if !$(target).hasClass "modal"
     e.preventDefault()
     switch options.toggle
       when "slide"
@@ -12,7 +12,8 @@ $.fn.toggler = ()->
       when "fade"
         target.stop().fadeToggle(options.options)
       when "modal"
-        $(target).modal(options).stop().fadeToggle(options.options)
+        $(target).modal(options);
+        $(target).modal('show');
       else
         target.stop().toggle(options.options)
   return this;
@@ -23,7 +24,7 @@ togglerInit= ()->
     modal= $(this)
     modal.find(".close-modal").each ()->
       $(this).click ()->
-        modal.modal().hide()
+        modal.modal("hide")
   $("body").click (e)->
     if !e.target.hasAttribute "data-toggle"
       $('.toggle-target-opened:not(.modal)').hide()

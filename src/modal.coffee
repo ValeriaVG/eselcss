@@ -1,8 +1,8 @@
 adjustModal= (target)->
-  console.log(target)
   if $(target).outerHeight()>($(window).height()-$(target).css("padding-top").replace("px","")*4)
     $(target).height $(window).height()-$(target).css("padding-top").replace("px","")*4
-  $(target).css "top",($(window).height()-$(target).outerHeight())*0.5
+  $(target).css "top",($(window).height()-$(target).outerHeight())*0.5  
+  $(target).css "bottom",($(window).height()-$(target).outerHeight())*0.5 if $(target).hasClass "full"
   $(target).css "left",($(window).width()-$(target).outerWidth())*0.5
 
 $.fn.modal = (mode)->
@@ -14,14 +14,11 @@ $.fn.modal = (mode)->
     when "hide"
       sl.hide_overlay()
       this.fadeOut()
-
-    else
-      adjustModal this
+  adjustModal this
   return this
 
 initModal = ()->
   $(window).resize ()->
-    console.log("resising")
     $(".modal").each ()->
       adjustModal this
 

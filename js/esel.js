@@ -7,9 +7,9 @@ window.sl = {
     }
   },
   show_overlay: function() {
+    $("body").addClass("overlay-opened");
     if ($(".overlay").length === 0) {
       $("body").append('<div class="overlay"></div>');
-      $("body").addClass("overlay-opened");
       $(".overlay").click(function() {
         $(".modal").fadeOut();
         return sl.hide_overlay();
@@ -50,11 +50,13 @@ $.fn.dropdown = function() {
 var adjustModal, initModal;
 
 adjustModal = function(target) {
-  console.log(target);
   if ($(target).outerHeight() > ($(window).height() - $(target).css("padding-top").replace("px", "") * 4)) {
     $(target).height($(window).height() - $(target).css("padding-top").replace("px", "") * 4);
   }
   $(target).css("top", ($(window).height() - $(target).outerHeight()) * 0.5);
+  if ($(target).hasClass("full")) {
+    $(target).css("bottom", ($(window).height() - $(target).outerHeight()) * 0.5);
+  }
   return $(target).css("left", ($(window).width() - $(target).outerWidth()) * 0.5);
 };
 
@@ -68,16 +70,13 @@ $.fn.modal = function(mode) {
     case "hide":
       sl.hide_overlay();
       this.fadeOut();
-      break;
-    default:
-      adjustModal(this);
   }
+  adjustModal(this);
   return this;
 };
 
 initModal = function() {
   return $(window).resize(function() {
-    console.log("resising");
     return $(".modal").each(function() {
       return adjustModal(this);
     });
@@ -101,7 +100,9 @@ $.fn.toggler = function() {
   el = $(this);
   target = options.target != null ? $(options.target) : $(el.attr("href"));
   el.click(function(e) {
-    $(target).toggleClass("toggle-target-opened");
+    if (!$(target).hasClass("modal")) {
+      $(target).toggleClass("toggle-target-opened");
+    }
     e.preventDefault();
     switch (options.toggle) {
       case "slide":
@@ -109,7 +110,8 @@ $.fn.toggler = function() {
       case "fade":
         return target.stop().fadeToggle(options.options);
       case "modal":
-        return $(target).modal(options).stop().fadeToggle(options.options);
+        $(target).modal(options);
+        return $(target).modal('show');
       default:
         return target.stop().toggle(options.options);
     }
@@ -126,7 +128,7 @@ togglerInit = function() {
     modal = $(this);
     return modal.find(".close-modal").each(function() {
       return $(this).click(function() {
-        return modal.modal().hide();
+        return modal.modal("hide");
       });
     });
   });
