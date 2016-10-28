@@ -7601,6 +7601,10 @@ img {
 nav {
   position: relative;
 }
+nav img {
+  height: 25px !important;
+  width: auto !important;
+}
 
 ul.nav {
   margin-bottom: 0;
@@ -9254,8 +9258,8 @@ html body .hidden {
   color: rgba(0, 0, 0, 0.87);
   background: white;
   display: inline-block;
-  height: 25px;
-  line-height: 12.5px;
+  min-height: 25px;
+  line-height: 25px;
   padding: 0 12.5px;
   box-sizing: border-box;
 }

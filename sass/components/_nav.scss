@@ -1,5 +1,9 @@
 nav{
   position: relative;
+  img{
+    height:$base-line-height!important;
+    width:auto!important;
+  }
 }
 ul.nav {
   margin-bottom:0;

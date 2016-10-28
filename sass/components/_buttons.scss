@@ -6,8 +6,8 @@
   background:white;
 
   display:inline-block;
-  height:$base-line-height;
-  line-height: $base-line-height/2;
+  min-height:$base-line-height;
+  line-height: $base-line-height;
   padding: 0 $base-line-height/2;
   box-sizing: border-box;
   &[disabled]{
