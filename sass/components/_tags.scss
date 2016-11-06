@@ -1,0 +1,34 @@
+.tagged-wrp{
+  @include rhythm(0.5);
+}
+.tag {
+    border: 1px solid text("dark-divider");
+    display: inline-block;
+    margin: 3px;
+    padding: 0 $base-line-height/2;
+    border-radius: $base-line-height/2;
+    color:text("dark-secondary");
+    background: palette("blue-grey","50");
+    position: relative;
+    cursor: pointer;
+    &:hover{
+      background: palette("blue-grey","100");
+    }
+
+    &:before {
+        position: absolute;
+        content: "x";
+        top: -$base-line-height/4;
+        right: -$base-line-height/4;
+        border-radius: $base-line-height/2;
+        background: #fff;
+        width: $base-line-height/2;
+        display: block;
+        height: $base-line-height/2;
+        font-size: 9px;
+        line-height: $base-line-height/2;
+        text-align: center;
+        border: 1px solid text("dark-divider");
+        color:text("dark-primary");
+    }
+}

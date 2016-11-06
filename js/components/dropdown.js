@@ -4,11 +4,16 @@ $.fn.dropdown = function() {
   $(els).each(function() {
     var el, event;
     el = this;
-    event = window.ontouchstart !== void 0 ? 'click' : 'mouseenter mouseleave';
+    event = typeof window.ontouchstart !== 'undefined' ? 'click' : 'mouseenter mouseleave';
     return $(el).on(event, function(e) {
+      e.stopPropagation();
       e.preventDefault();
       return $(el).find(">ul").stop().slideToggle();
     });
   });
   return this;
 };
+
+$(function() {
+  return $(".dropdown").dropdown();
+});

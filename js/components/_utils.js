@@ -6,6 +6,17 @@ window.sl = {
       return $(el).data();
     }
   },
+  show: function(elClass) {
+    if ($("." + elClass).length === 0) {
+      $("body").append('<div class="' + elClass + '"></div>');
+    }
+    return $("." + elClass).fadeIn();
+  },
+  hide: function(elClass) {
+    if ($("." + elClass).length > 0) {
+      return $("." + elClass).fadeOut();
+    }
+  },
   show_overlay: function() {
     $("body").addClass("overlay-opened");
     if ($(".overlay").length === 0) {

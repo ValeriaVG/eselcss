@@ -1,0 +1,20 @@
+@font-face {
+    font-family: 'Days';
+    src: url('../fonts/Days-webfont.eot');
+    src: url('../fonts/Days-webfont.eot?#iefix') format('embedded-opentype'),
+         url('../fonts/Days-webfont.woff') format('woff'),
+         url('../fonts/Days-webfont.ttf') format('truetype'),
+         url('../fonts/Days-webfont.svg#daysregular') format('svg');
+    font-weight: normal;
+    font-style: normal;
+
+}
+$main-header-font:'Days', sans-serif;
+$main-header-weight:normal;
+$main-header-transform:none;
+
+$header-font:'Days', sans-serif;
+$header-weight:normal;
+$header-transform:normal;
+
+$text-font:"Arial", "Helvetica Neue", "Helvetica", sans-serif;

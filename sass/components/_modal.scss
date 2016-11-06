@@ -8,10 +8,11 @@
     display: none;
     z-index: 98;
 }
-body.overlay-opened{
+body.overlay-opened,body.alert-opened{
   overflow:hidden;
 }
 .modal {
+  border-radius: $base-line-height/2;
   &>.close-modal{
     position: absolute;
     top:0;
@@ -41,7 +42,9 @@ body.overlay-opened{
     }
   }
   &.big{
-
+    @include media-less-than($tablet) {
+        width: calc(#{'100% -' $base-line-height*2});
+    }
     @include media-more-than($tablet) {
         width: $tablet - $base-line-height*2;
     }

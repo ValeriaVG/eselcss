@@ -4,6 +4,13 @@ window.sl=
       return args[0]
     else
       return $(el).data()
+  show: (elClass)->
+    if $(".#{elClass}").length == 0
+      $("body").append('<div class="'+elClass+'"></div>')
+    $(".#{elClass}").fadeIn()
+  hide: (elClass)->
+    if $(".#{elClass}").length > 0
+      $(".#{elClass}").fadeOut()  
   show_overlay: ()->
     $("body").addClass("overlay-opened")
     if $(".overlay").length == 0

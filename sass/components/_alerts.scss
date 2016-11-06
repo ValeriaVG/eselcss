@@ -12,7 +12,7 @@
 }
 
 .customalert {
-	background-color: palette("blue-gray","50");
+	background-color: palette("blue-grey","50");
 	border-radius: $base-radius;
 	width: 550px;
 	display: none;
@@ -37,7 +37,7 @@
 	.customalert_footer,
 	.customalert_header {
 		text-align: center;
-		background: palette("blue-gray","50");
+		background: palette("blue-grey","50");
 	}
 
 	.customalert_header {
@@ -50,7 +50,7 @@
 	}
 
 	.customalert_footer button {
-		background: palette("blue-gray","500");
+		background: palette("blue-grey","500");
 		color: text("light-secondary");
 		margin-top: $base-line-height/4;
 		margin-bottom: $base-line-height/4;
@@ -63,7 +63,7 @@
 		transition: 300ms;
 
 		&:hover {
-			background: palette("blue-gray","800");
+			background: palette("blue-grey","800");
 			color: text("light-primary");
 			transition: 500ms;
 		}
@@ -78,10 +78,10 @@
 		}
 
 		&.customalert_button_cancel {
-			background-color: palette("red","500");
+			background-color: palette("grey","500");
 
 			&:hover {
-				background-color: palette("red","800");
+				background-color: palette("grey","800");
 			}
 		}
 	}

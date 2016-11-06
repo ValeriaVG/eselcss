@@ -4,7 +4,7 @@ $rhythm-unit: "px";
 $base-font-size:16px;
 
 $border-color: text("dark-divider");
-$highlight-color: palette("blue-gray","100");
+$highlight-color: palette("blue-grey","100");
 
 $highlight-bg: palette("yellow","A200");
 $text-on-highlight:text("dark-secondary");
@@ -17,6 +17,7 @@ $li-char-color:text("dark-hint");
 
 $columns:12;
 
+$primary-color:palette("pink","500");
 
 $desktop:1140px;
 $tablet:960px;
@@ -33,11 +34,12 @@ $header-transform:none!default;
 
 $text-font:sans-serif!default;
 
-$link-color:palette("green","500");
-$link-hover-color:palette("green","700");
+$link-color:palette("pink","500");
+$link-hover-color:palette("pink","A500");
 
-$primary-color:palette("teal","800");
 
-$overlay-bg:rgba(0,0,0,0.87);
 
-$base-radius:0;
+
+$overlay-bg:rgba(0,0,0,0.5);
+
+$base-radius:$base-line-height/4;

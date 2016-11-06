@@ -37,7 +37,7 @@
 	}
 }
 @mixin notification() {
-	background-color: palette("blue-gray","50");
+	background-color: palette("blue-grey","50");
 	opacity: 0.9;
 	zoom: 1;
 	width: 320px - ($base-line-height*2);
@@ -60,7 +60,7 @@ color:text("dark-secondary");
 		font-weight: bold;
 		border-top-left-radius: $base-radius;
 		border-top-right-radius: $base-radius;
-		background: palette("blue-gray","500");
+		background: palette("blue-grey","500");
 		color:text("light-primary");
 		padding:0 $base-line-height;
 	}

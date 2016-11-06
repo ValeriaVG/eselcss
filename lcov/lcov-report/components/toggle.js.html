@@ -20,24 +20,24 @@
     </h1>
     <div class='clearfix'>
       <div class='fl pad1y space-right2'>
-        <span class="strong">100% </span>
+        <span class="strong">94.29% </span>
         <span class="quiet">Statements</span>
-        <span class='fraction'>31/31</span>
+        <span class='fraction'>33/35</span>
+      </div>
+      <div class='fl pad1y space-right2'>
+        <span class="strong">75% </span>
+        <span class="quiet">Branches</span>
+        <span class='fraction'>12/16</span>
       </div>
       <div class='fl pad1y space-right2'>
         <span class="strong">90% </span>
-        <span class="quiet">Branches</span>
+        <span class="quiet">Functions</span>
         <span class='fraction'>9/10</span>
       </div>
       <div class='fl pad1y space-right2'>
-        <span class="strong">100% </span>
-        <span class="quiet">Functions</span>
-        <span class='fraction'>9/9</span>
-      </div>
-      <div class='fl pad1y space-right2'>
-        <span class="strong">100% </span>
+        <span class="strong">94.29% </span>
         <span class="quiet">Lines</span>
-        <span class='fraction'>31/31</span>
+        <span class='fraction'>33/35</span>
       </div>
       <div class='fl pad1y'>
         <span class="strong">1 statement, 1 function</span>
@@ -102,13 +102,26 @@
 53
 54
 55
-56</td><td class="line-coverage quiet"><span class="cline-any cline-yes">1×</span>
+56
+57
+58
+59
+60
+61
+62
+63</td><td class="line-coverage quiet"><span class="cline-any cline-yes">1×</span>
 <span class="cline-any cline-neutral">&nbsp;</span>
 <span class="cline-any cline-yes">1×</span>
 <span class="cline-any cline-yes">4×</span>
 <span class="cline-any cline-yes">4×</span>
 <span class="cline-any cline-yes">4×</span>
 <span class="cline-any cline-yes">4×</span>
+<span class="cline-any cline-yes">4×</span>
+<span class="cline-any cline-yes">4×</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
 <span class="cline-any cline-yes">4×</span>
 <span class="cline-any cline-yes">9×</span>
 <span class="cline-any cline-yes">6×</span>
@@ -124,6 +137,7 @@
 <span class="cline-any cline-yes">3×</span>
 <span class="cline-any cline-neutral">&nbsp;</span>
 <span class="cline-any cline-yes">2×</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
 <span class="cline-any cline-neutral">&nbsp;</span>
 <span class="cline-any cline-neutral">&nbsp;</span>
 <span class="cline-any cline-yes">4×</span>
@@ -164,23 +178,30 @@ $.fn.toggler = function() {
   options = sl.get_options(this, arguments);
   el = $(this);
   target = options.target != null ? <span class="branch-0 cbranch-no" title="branch not covered" >$(options.target) </span>: $(el.attr("href"));
-  el.click(function(e) {
-    if (!$(target).hasClass("modal")) {
-      $(target).toggleClass("toggle-target-opened");
+  <span class="missing-if-branch" title="else path not taken" >E</span>if ($(target).length &gt; 0) {
+    <span class="missing-if-branch" title="if path not taken" >I</span>if (/hidden/.test(el.attr("class")) &amp;&amp; <span class="branch-1 cbranch-no" title="branch not covered" >options.toggle !== "modal")</span> {
+<span class="cstat-no" title="statement not covered" >      $(window).resize(<span class="fstat-no" title="function not covered" >function() {</span></span>
+<span class="cstat-no" title="statement not covered" >        return target.attr("style", "");</span>
+      });
     }
-    e.preventDefault();
-    switch (options.toggle) {
-      case "slide":
-        return target.stop().slideToggle(options.options);
-      case "fade":
-        return target.stop().fadeToggle(options.options);
-      case "modal":
-        $(target).modal(options);
-        return $(target).modal('show');
-      default:
-        return target.stop().toggle(options.options);
-    }
-  });
+    el.click(function(e) {
+      if (!$(target).hasClass("modal")) {
+        $(target).toggleClass("toggle-target-opened");
+      }
+      e.preventDefault();
+      switch (options.toggle) {
+        case "slide":
+          return target.stop().slideToggle(options.options);
+        case "fade":
+          return target.stop().fadeToggle(options.options);
+        case "modal":
+          $(target).modal(options);
+          return $(target).modal('show', $(el).data());
+        default:
+          return target.stop().toggle(options.options);
+      }
+    });
+  }
   return this;
 };
 &nbsp;
@@ -210,7 +231,7 @@ togglerInit = function() {
  */
 &nbsp;
 $(<span class="fstat-skip" title="function not covered" >function() {</span>
-<span class="cstat-skip" title="statement not covered" >  return togglerInit;</span>
+<span class="cstat-skip" title="statement not covered" >  return togglerInit();</span>
 });
 &nbsp;</pre></td></tr>
 </table></pre>
@@ -218,7 +239,7 @@ $(<span class="fstat-skip" title="function not covered" >function() {</span>
 </div><!-- /wrapper -->
 <div class='footer quiet pad2 space-top1 center small'>
   Code coverage
-  generated by <a href="http://istanbul-js.org/" target="_blank">istanbul</a> at Fri Oct 28 2016 12:19:06 GMT+0300 (MSK)
+  generated by <a href="http://istanbul-js.org/" target="_blank">istanbul</a> at Sun Nov 06 2016 20:17:13 GMT+0300 (MSK)
 </div>
 </div>
 <script src="../prettify.js"></script>

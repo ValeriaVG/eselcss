@@ -5,8 +5,9 @@ label {
     padding: 0;
     margin: 0;
     &.error{
-      background:palette("red","500");
-      color:text("light-primary");
+      //  background:palette("red","500");
+      color:palette("red","500");
+      //color:text("light-primary");
       padding: $base-line-height/2;
     }
 }
@@ -21,6 +22,7 @@ select {
     border: 1px solid $border-color;
     padding: $base-line-height/2;
     line-height: $base-line-height*2;
+    border-radius: $base-radius;
     width: 100%;
     box-sizing: border-box;
     height: $base-line-height*2;
@@ -65,6 +67,7 @@ textarea {
     line-height: $base-line-height;
     resize:none;
     display:block;
+    border-radius: $base-radius;
 }
 
 textarea.richText{

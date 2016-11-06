@@ -1,10 +1,13 @@
 @include establish-baseline();
-a{
-  color:$link-color;
-  &:hover{
-   color:  $link-hover-color;
-  }
+
+a {
+    color: $link-color;
+
+    &:hover {
+        color: $link-hover-color;
+    }
 }
+
 body {
     @include adjust-font-size-to($base-font-size);
     font-family: $text-font;
@@ -142,6 +145,17 @@ ul li {
     }
 }
 
+ul.fa-ul {
+    li {
+        margin-left: 0;
+        padding-left:0;
+
+        &:before {
+            display: none;
+        }
+    }
+}
+
 ol {
     counter-reset: list 0;
 
@@ -195,9 +209,11 @@ mark {
 .text-justify {
     text-align: justify;
 }
-.uppercase{
-  text-transform: uppercase;
+
+.uppercase {
+    text-transform: uppercase;
 }
+
 .divider,
 hr {
     height: 1px;
@@ -205,64 +221,102 @@ hr {
     background-color: text("dark-divider");
     margin-top: -1px;
     display: block;
-    clear:both;
-border: none;
+    clear: both;
+    border: none;
 
     &.light {
         background-color: text("light-divider");
     }
-  }
-.smaller,small{
-  @include adjust-font-size-to($base-font-size/$ratio);
-}
-.img.float-left{
-  padding-right:$base-line-height;
-  padding-bottom:$base-line-height;
-}
-.img.float-right{
-  padding-left:$base-line-height;
-  padding-bottom:$base-line-height;
-}
-.one-line{
-  line-height: $base-line-height;
-}
-textarea{
-  font-family: $text-font;
 }
 
-table{
-  border-collapse: collapse;
-  box-sizing: border-box;
-  tr{
-    td,th{
-      border:1px solid $border-color;
-      word-wrap: break-word;
-      padding:$base-line-height/2;
-      box-sizing: border-box;
-    }
-    th{
-      font-weight:bold;
-    }
-  }
-}
-sub{
-  font-size: smaller;
-  vertical-align: sub;
-}
-sup{
-  font-size: smaller;
-  vertical-align: super;
+.smaller,
+small {
+    @include adjust-font-size-to($base-font-size/$ratio);
 }
 
-table.table{
-  thead{
-    tr{
-      background: text("dark-divider");
+.img.float-left {
+    padding-right: $base-line-height;
+    padding-bottom: $base-line-height;
+}
+
+.img.float-right {
+    padding-left: $base-line-height;
+    padding-bottom: $base-line-height;
+}
+
+.one-line {
+    line-height: $base-line-height;
+}
+
+textarea {
+    font-family: $text-font;
+}
+
+table {
+    border-collapse: collapse;
+    box-sizing: border-box;
+
+    tr {
+        td,
+        th {
+            border: 1px solid $border-color;
+            word-wrap: break-word;
+            padding: $base-line-height/2;
+            box-sizing: border-box;
+        }
+
+        th {
+            font-weight: bold;
+        }
     }
-  }
-  tbody{
-    tr:nth-child(2n){
-      background: palette("blue-gray","50");
+}
+
+sub {
+    font-size: smaller;
+    vertical-align: sub;
+}
+
+sup {
+    font-size: smaller;
+    vertical-align: super;
+}
+
+table.table {
+    thead {
+        tr {
+            background: text("dark-divider");
+        }
     }
-  }
+
+    tbody {
+        tr:nth-child(2n) {
+            background: palette("blue-grey","50");
+        }
+    }
+}
+
+table.primary-table {
+    thead {
+        tr {
+            color: text("light-primary");
+            background: $primary-color;
+        }
+    }
+}
+
+.fluid {
+    width: 100%;
+    box-sizing: border-box;
+}
+
+.dashed {
+    text-decoration: none!important;
+
+    & > span {
+        border-bottom: 1px dashed $link-color;
+    }
+
+    &:hover > span {
+        border-bottom: 1px dashed $link-hover-color;
+    }
 }

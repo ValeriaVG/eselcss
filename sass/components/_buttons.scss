@@ -4,12 +4,22 @@
   border:1px solid $border-color;
   color:text("dark-primary");
   background:white;
+  display:block;
+  &:hover{
+    opacity:0.87;
+    transition: 300ms;
+  }
 
   display:inline-block;
   min-height:$base-line-height;
   line-height: $base-line-height;
   padding: 0 $base-line-height/2;
   box-sizing: border-box;
+  text-decoration: none;
+  &.fluid{
+    width:100%;
+  }
+
   &[disabled]{
     opacity:0.5;
   }
@@ -17,7 +27,7 @@
   padding-left: $base-line-height/2;
   padding-right: $base-line-height/2;
   height:$base-line-height*2;
-  line-height: $base-line-height;
+  line-height: $base-line-height*2;
   }
   &.transparent{
     background:transparent;
@@ -33,12 +43,12 @@
 
 @each $name,$color in $palette{
   .btn.btn-#{$name}{
-    background:map-get($color,"500");
+    background:map-get($color,"500")!important;
     color:white;
-    border:1px solid map-get($color,"400");
+    border:1px solid map-get($color,"400")!important;
     transition: 300ms;
     &:hover{
-      background:map-get($color,"A700");
+      background:map-get($color,"A700")!important;
       transition: 500ms;
     }
   }
@@ -61,4 +71,19 @@
     bottom:$base-line-height;
   }
 
+}
+
+.flat-right{
+  &.btn{
+    margin-top:1px;
+  }
+  border-top-right-radius: 0!important;
+  border-bottom-right-radius: 0!important;
+}
+.flat-left{
+  &.btn{
+    margin-top:1px;
+  }
+  border-top-left-radius: 0!important;
+  border-bottom-left-radius: 0!important;
 }

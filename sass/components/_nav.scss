@@ -1,202 +1,331 @@
-nav{
-  position: relative;
-  img{
-    height:$base-line-height!important;
-    width:auto!important;
-  }
-}
-ul.nav {
-  margin-bottom:0;
-  z-index:96;
-    @include rhythm(0.5);
-    li.dropdown ul > li {
-    width: 100%;
-}
-&.light{
-  &,& a,& span{color:text("light-primary");
-    &:hover,&.active{
-      color:text("light-primary")
+nav {
+    position: relative;
+
+    img {
+        height: $base-line-height!important;
+        width: auto!important;
     }
-  }
-  a:hover,a.active{
-    background:text("dark-hint");
-  }
-  &.bordered.inline-menu{
-    &>li{
-      border:none!important;
-      &>a{
-        margin:0;
-      border:none;
-      border-right:1px solid text("light-divider");
-    }
-    &.dropdown ul li>a{
-      border-bottom:1px solid text("light-divider");
-    }
-      &:last-child>a{
-        border:none;
-      }
-    }
-  }
-}
-&.dark{
-    &,& a{color:text("dark-secondary");
-      &:hover,&.active{
-        color:text("dark-primary");
-      }
-    }
-    a:hover,a.active{
-      background:text("light-hint");
-    }
-    &.bordered.inline-menu{
-      &>li{
-        border:none!important;
-        &>a{
-            margin:0;
-        border:none;
-        border-right:1px solid text("dark-divider");
-      }
-        &:last-child>a{
-          border:none;
+
+    li {
+        p {
+            margin: 0;
         }
-      }
     }
 }
 
+ul.nav {
+    margin-bottom: 0;
+    z-index: 96;
+
+    &:not(.inline-menu) li > a {
+        &.active,
+        &:hover {
+            text-decoration: underline!important;
+        }
+    }
+    @include rhythm(0.5);
+
+    li.dropdown ul > li {
+        width: 100%;
+    }
+
+    &.light {
+        &,
+        & a,
+        & span {
+            color: text("light-secondary");
+
+            &.active,
+            &:hover {
+                color: text("light-primary");
+            }
+        }
+
+        a.active,
+        a:hover {
+            background: text("dark-divider");
+        }
+
+        &.bordered.inline-menu {
+            & > li {
+                border: none!important;
+
+                & > a {
+                    margin: 0;
+                    border: none;
+                    border-right: 1px solid text("light-divider");
+                }
+
+                &.dropdown ul li > a {
+                    border-bottom: 1px solid text("light-divider");
+                }
+
+                &:last-child > a {
+                    border: none;
+                }
+            }
+        }
+    }
+
+    &.dark {
+        &,
+        & a {
+            color: text("dark-secondary");
+
+            &.active,
+            &:hover {
+                color: text("dark-primary");
+            }
+        }
+
+        a.active,
+        a:hover {
+            background: text("light-hint");
+        }
+
+        &.bordered.inline-menu {
+            & > li {
+                border: none!important;
+
+                & > a {
+                    margin: 0;
+                    border: none;
+                    border-right: 1px solid text("dark-divider");
+                }
+
+                &:last-child > a {
+                    border: none;
+                }
+            }
+        }
+    }
 
     li {
         padding-left: 0;
-        margin-left:0;
+        margin-left: 0;
 
-        &.dropdown
-        {
-          &>a{padding-right: $base-line-height;
-          position: relative;
-          &:after{
-            content: $fa-var-caret-right;
-            font-family:"FontAwesome";
-            position: absolute;
-            right:$base-line-height/2;
-          }
-        }
-        position: relative;
-          ul{
-          display:none;
-          position: absolute;
-          margin-top:-1px;
-    z-index: 97;
+        &.dropdown {
+            & > a {
+                padding-right: $base-line-height;
+                position: relative;
 
-    left: 0;
-    border-top: 1px solid rgba(255,255,255,.12);
-    width: 100%;
-    box-sizing: border-box;
+                &:after {
+                    content: $fa-var-caret-right;
+                    font-family: "FontAwesome";
+                    position: absolute;
+                    right: $base-line-height/2;
+                }
+            }
+            position: relative;
+
+            ul {
+                display: none;
+                position: absolute;
+                margin-top: -1px;
+                z-index: 97;
+                left: 0;
+                border-top: 1px solid rgba(255,255,255,.12);
+                width: 100%;
+                box-sizing: border-box;
+            }
         }
-}
+
         &:before {
             display: none;
         }
 
-        a,span {
-            padding: 0 $base-line-height/2;
+        a,
+        p,
+        span {
+            padding: 0 $base-line-height/4;
             @include rhythm-padding(0.5);
             display: block;
             text-decoration: none;
-            color:inherit;
+            color: inherit;
             background: inherit;
-            &:hover{
-              opacity:0.87;
+
+            &:hover {
+                opacity: 0.87;
             }
         }
     }
-    &.bordered{
-      li>a,li>span{border-bottom: 1px solid text("dark-divider");box-sizing:border-box;margin-top:-1px;}
-      li:last-child>a,li:last-child>span{
-        border-bottom:none;
-      }
 
-    @each $name,$color in $palette{
-      &.#{$name}-menu{
-        background:map-get($color,"500");
-        &>li>a:hover,&>li.active>a{
-            background:map-get($color,"A700");
+    &.bordered {
+
+        li > a,
+        li > p,
+        li > span {
+            border-bottom: 1px solid text("dark-divider");
+            box-sizing: border-box;
+            margin-top: -1px;
         }
-      }
-      &.right-#{$name}-border-menu{
-        &>li>a:hover,&>li.active>a{
-            border-right:4px solid map-get($color,"500");
+        &.dashed{
+          li > a,
+          li > p,
+          li > span {
+              border-bottom: 1px dashed text("dark-divider");
+              box-sizing: border-box;
+              margin-top: -1px;
+          }
         }
-      }
-      &.left-#{$name}-border-menu{
-        &>li>a,&>li>span{
-            border-left:4px solid transparent;
+
+        li:last-child > a,
+        li:last-child > p,
+        li:last-child > span {
+            border-bottom: none;
         }
-        &>li>a:hover,&>li.active>a{
-            border-left:4px solid map-get($color,"500");
+        @each $name,$color in $palette {
+            &.#{$name}-menu {
+                background: map-get($color,"500");
+
+                & > li > a:hover,
+                & > li.active > a {
+                    background: map-get($color,"A700");
+                }
+            }
+
+            &.right-#{$name}-border-menu {
+                & > li > a:hover,
+                & > li.active > a {
+                    border-right: 4px solid map-get($color,"500");
+                }
+            }
+
+            &.left-#{$name}-border-menu {
+                & > li > a,
+                & > li > span {
+                    border-left: 4px solid transparent;
+                }
+
+                & > li > a:hover,
+                & > li.active > a {
+                    border-left: 4px solid map-get($color,"500");
+                }
+            }
+        }
+    }
+}
+
+ul.inline-menu,
+ul.pagination {
+    margin: 0;
+    padding: 0;
+    @include clearfix();
+
+    & > li.dropdown {
+        & > a {
+            &:after {
+                content: $fa-var-caret-down;
+            }
+        }
+    }
+
+    li {
+        margin: 0;
+        float: left;
+        display: inline;
+        padding-left: 0;
+
+        a {
+            padding-left: $base-line-height/2;
+            padding-right: $base-line-height/2;
+        }
+
+        &:before {
+            display: none;
+        }
+    }
+
+
+
+    &.smaller.right > li:last-child {
+        &,
+        & > a {
+            padding-right: 0;
+        }
+    }
+}
+
+ul.centered {
+    display: -webkit-flex;
+    display: flex;
+
+    li {
+        float: none;
+    }
+    -webkit-flex-direction: row;
+    flex-direction: row;
+    -webkit-flex-wrap: nowrap;
+    flex-wrap: nowrap;
+    -webkit-justify-content: center;
+    justify-content: center;
+}
+
+ul.inline-menu.centered {
+    display: -webkit-inline-flex;
+    display: inline-flex;
+}
+
+ul.phone-to-list {
+    @include media-less-than($phone) {
+         @include vertical-list();
+    }
+}
+
+ul.tablet-to-list {
+    @include media-less-than($tablet) {
+         @include vertical-list();
+    }
+}
+
+ul.pagination.nav {
+    li {
+
+        &.active a,
+        &:hover a {
+            background: $primary-color;
+            color:text("light-primary");
+
+        }
+    }
+    &.small{
+      li {
+        a,span{
+          padding:0 $base-line-height/4;
         }
       }
     }
 }
+ul.nav>li.active a{
+  color: text("light-primary");
+  font-weight: bold;
 }
-ul.inline-menu{
-  margin:0;
-  padding:0;
-  @include clearfix();
-  &>li.dropdown{
-    &>a{
-      &:after{
-        content:$fa-var-caret-down;
-      }
-    }
+li>p>a{
+  color:$link-color!important;
+  padding:0!important;
+  &:hover{
+    color:$link-hover-color;
+      padding:0!important;
+      background: transparent!important;
   }
+}
+
+.vd-menu{
+border-bottom:5px solid palette("blue","600");
+a{
+  color:palette("blue","600")!important;
+  &:hover,&.active{
+      background:palette("blue","600")!important;
+      color:text("light-primary")!important;
+  }
+}
+}
+ul.nav.smaller{
   li{
-    margin:0;
-    float:left;
-    display:inline;
-    padding-left:0;
     a{
-      padding-left:$base-line-height/2;
-      padding-right:$base-line-height/2;
+      padding-top:0;
+      padding-bottom:0;
+      line-height: $base-line-height;
     }
-    &:before{
-      display:none;
-    }
-
-
-
-  }
-  &.smaller:not(.right)>li:first-child{
-    &,&>a{padding-left:0;}
-  }
-  &.smaller.right>li:last-child{
-    &,&>a{padding-right:0;}
-  }
-}
-
-ul.centered{
-  display:-webkit-flex;
-  display:flex;
-  li{
-    float:none;
-  }
-  -webkit-flex-direction: row;
-  flex-direction:         row;
-  -webkit-flex-wrap: nowrap;
-flex-wrap:         nowrap;
--webkit-justify-content: center;
-justify-content: center;
-}
-ul.inline-menu.centered{
-  display:-webkit-inline-flex;
-  display:inline-flex;
-}
-
-ul.phone-to-list{
-  @include media-less-than($phone){
-    @include vertical-list();
-  }
-}
-
-ul.tablet-to-list{
-  @include media-less-than($tablet){
-    @include vertical-list();
   }
 }

@@ -6,6 +6,17 @@ window.sl = {
       return $(el).data();
     }
   },
+  show: function(elClass) {
+    if ($("." + elClass).length === 0) {
+      $("body").append('<div class="' + elClass + '"></div>');
+    }
+    return $("." + elClass).fadeIn();
+  },
+  hide: function(elClass) {
+    if ($("." + elClass).length > 0) {
+      return $("." + elClass).fadeOut();
+    }
+  },
   show_overlay: function() {
     $("body").addClass("overlay-opened");
     if ($(".overlay").length === 0) {
@@ -68,14 +79,36 @@ window.sl = {
   }
 };
 
+$.fn.ajaxSubmit = function(callback) {
+  var data, form;
+  form = this;
+  data = $(this).serializeArray();
+  $.ajax({
+    url: $(form).attr("action"),
+    data: data,
+    type: $(form).attr("method"),
+    dataType: 'json',
+    success: function(res) {
+      if (callback) {
+        return callback(res);
+      }
+    },
+    error: function(res) {
+      return console.log(res);
+    }
+  });
+  return this;
+};
+
 $.fn.dropdown = function() {
   var els;
   els = this;
   $(els).each(function() {
     var el, event;
     el = this;
-    event = window.ontouchstart !== void 0 ? 'click' : 'mouseenter mouseleave';
+    event = typeof window.ontouchstart !== 'undefined' ? 'click' : 'mouseenter mouseleave';
     return $(el).on(event, function(e) {
+      e.stopPropagation();
       e.preventDefault();
       return $(el).find(">ul").stop().slideToggle();
     });
@@ -83,29 +116,49 @@ $.fn.dropdown = function() {
   return this;
 };
 
+$(function() {
+  return $(".dropdown").dropdown();
+});
+
 var adjustModal, initModal;
 
 adjustModal = function(target) {
-  if ($(target).outerHeight() > ($(window).height() - $(target).css("padding-top").replace("px", "") * 4)) {
-    $(target).height($(window).height() - $(target).css("padding-top").replace("px", "") * 4);
+  if ($(target).length > 0) {
+    if ($(target).outerHeight() > ($(window).height() - $(target).css("padding-top").replace("px", "") * 4)) {
+      $(target).height($(window).height() - $(target).css("padding-top").replace("px", "") * 4);
+    }
+    $(target).css("top", ($(window).height() - $(target).outerHeight()) * 0.5);
+    if ($(target).hasClass("full")) {
+      $(target).css("bottom", ($(window).height() - $(target).outerHeight()) * 0.5);
+    }
+    return $(target).css("left", ($(window).width() - $(target).outerWidth()) * 0.5);
   }
-  $(target).css("top", ($(window).height() - $(target).outerHeight()) * 0.5);
-  if ($(target).hasClass("full")) {
-    $(target).css("bottom", ($(window).height() - $(target).outerHeight()) * 0.5);
-  }
-  return $(target).css("left", ($(window).width() - $(target).outerWidth()) * 0.5);
 };
 
-$.fn.modal = function(mode) {
+$.fn.modal = function(mode, triggerData) {
+  var modal;
+  modal = this;
   switch (mode) {
     case "show":
       adjustModal(this);
+      $(modal).trigger({
+        type: "sl.modal.show",
+        triggerData: triggerData
+      });
       sl.show_overlay();
-      this.fadeIn();
+      this.fadeIn(500, function() {
+        return $(modal).trigger({
+          type: "sl.modal.shown",
+          triggerData: triggerData
+        });
+      });
       break;
     case "hide":
+      $(modal).trigger("sl.modal.hide");
       sl.hide_overlay();
-      this.fadeOut();
+      this.fadeOut(500, function() {
+        return $(modal).trigger("sl.modal.hidden");
+      });
   }
   adjustModal(this);
   return this;
@@ -125,7 +178,7 @@ initModal = function() {
  */
 
 $(function() {
-  return initModal;
+  return initModal();
 });
 
 var togglerInit;
@@ -135,23 +188,30 @@ $.fn.toggler = function() {
   options = sl.get_options(this, arguments);
   el = $(this);
   target = options.target != null ? $(options.target) : $(el.attr("href"));
-  el.click(function(e) {
-    if (!$(target).hasClass("modal")) {
-      $(target).toggleClass("toggle-target-opened");
+  if ($(target).length > 0) {
+    if (/hidden/.test(el.attr("class")) && options.toggle !== "modal") {
+      $(window).resize(function() {
+        return target.attr("style", "");
+      });
     }
-    e.preventDefault();
-    switch (options.toggle) {
-      case "slide":
-        return target.stop().slideToggle(options.options);
-      case "fade":
-        return target.stop().fadeToggle(options.options);
-      case "modal":
-        $(target).modal(options);
-        return $(target).modal('show');
-      default:
-        return target.stop().toggle(options.options);
-    }
-  });
+    el.click(function(e) {
+      if (!$(target).hasClass("modal")) {
+        $(target).toggleClass("toggle-target-opened");
+      }
+      e.preventDefault();
+      switch (options.toggle) {
+        case "slide":
+          return target.stop().slideToggle(options.options);
+        case "fade":
+          return target.stop().fadeToggle(options.options);
+        case "modal":
+          $(target).modal(options);
+          return $(target).modal('show', $(el).data());
+        default:
+          return target.stop().toggle(options.options);
+      }
+    });
+  }
   return this;
 };
 
@@ -181,5 +241,5 @@ togglerInit = function() {
  */
 
 $(function() {
-  return togglerInit;
+  return togglerInit();
 });

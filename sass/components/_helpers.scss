@@ -24,6 +24,42 @@ html body .tablet-and-less-hide{
   }
 }
 
+html body .hidden-on-tablet{
+  @include media-between($phone + 1px, $tablet){
+    display: none;
+  }
+}
+
+html body .hidden-on-desktop{
+  @include media-between($tablet + 1px, $desktop){
+    display: none;
+  }
+}
+
+html body .visible-on-tablet{
+  display:none;
+  @include media-between($phone + 1px, $tablet){
+    display: initial;
+  }
+}
+
+html body .visible-on-desktop{
+  display:none;
+  @include media-between($tablet + 1px, $desktop){
+  display: initial;
+  }
+}
+
+
 html body .hidden{
   display:none;
+}
+  @include media-more-than($phone){
+.valign{
+  display: inline-flex!important;
+  align-items: center;
+}
+.full{
+  height:calc(#{'100% -' $base-line-height})!important;
+}
 }

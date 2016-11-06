@@ -282,7 +282,7 @@ $palette:(
 "800":#424242,
 "900":#212121
 ),
-"blue-gray":(
+"blue-grey":(
 "50":#ECEFF1,
 "100":#CFD8DC,
 "200":#B0BEC5,
@@ -321,7 +321,7 @@ $opaque-text:(
 );
 @each $name,$color in $palette{
   .#{$name}{
-    color:map-get($color,"500");
+    color:map-get($color,"500")!important;
   }
   .bg-#{$name}{
 
@@ -360,7 +360,7 @@ $opaque-text:(
 
 
 @each $name,$value in $opaque-text{
-  .#{$name}{
+  .#{$name},a.#{$name}{
     color:$value!important;
   }
   a.#{$name}-hover:hover,a.#{$name}-hover.active{
@@ -385,4 +385,7 @@ $opaque-text:(
     @error "Sorry, but `#{$name}` is not a valid color for $opaque-text.";
   }
   @return $c;
+}
+.bg-white{
+  background: white;
 }

@@ -6,13 +6,13 @@
   margin: 0 auto;
   min-width:320px;
   @include media-more-than($phone){
-    min-width:$phone;
+    min-width:$phone + $base-line-height*2;
   }
   @include media-more-than($tablet){
-    min-width:$tablet;
+    min-width:$tablet + $base-line-height*2;
   }
   @include media-more-than($desktop){
-    width:$desktop;
+    width:$desktop + $base-line-height*2;
   }
   &.fluid{
     width:auto;
